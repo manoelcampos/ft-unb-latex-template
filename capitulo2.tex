@@ -1,0 +1,59 @@
+\chapter{Protocolos de comunicação} \label{capitulo2}
+
+
+\section{Uma associação}
+
+% Gera 3 parágrafos com texto aleatório, apenas para exemplo. Apague o comando para remover tal texto.
+\lipsum[1-3] 
+
+
+\subsection{Motivos para abortar uma associação}
+
+%lista não numerada
+\begin{itemize}
+	\item primeiro item;
+	\item segundo item;
+	\item terceiro item;
+	\item quarto item.
+\end{itemize}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.8]{imagens/red.png}
+	\caption{Exemplo de imagem}
+	\label{imagem1}
+\end{figure}
+
+
+Se durante o processo de configuração de uma associação for recebido como payload um hostname e esse hostname não puder ser resolvido em um tempo hábil deve se enviar um abort com a causa de erro de endereço não resolvido. Veja exemplo na Figura \ref{imagem1}.
+
+
+% Gera 4 parágrafos com texto aleatório, apenas para exemplo. Apague o comando para remover tal texto.
+\lipsum[1-4] 
+
+A Tabela \ref{tabela1} a seguir apresenta os tipos de \textit{chunk} de um pacote do protocolo.
+
+\begin{table}[ht!]
+  \begin{center}
+  \setlength{\belowcaptionskip}{10pt} % espao entre caption e tabela
+  \footnotesize {
+      \begin{tabular}{|p{4cm}|p{9cm}|}
+	  \hline
+	  \textbf{Nome} & \textbf{Função} \\
+	  \hline
+	  Iniciar & Usado para iniciar uma associação \\
+	  \hline
+	  Confirmacao & Segunda mensagem de uma configuração de uma associação\\
+	  \hline
+	  Mensagem & Terceira mensagem de uma configuração de uma associação\\
+	  \hline
+	  Cookie & Quarta mensagem de uma configuração de uma associação\\
+	  \hline
+	  Dados & Dados da aplicação\\
+	  \hline
+      \end{tabular}
+  }
+  \caption{Tipos de \textit{chunk} de um pacote SCTP}
+  \label{tabela1}
+  \end{center}
+\end{table}

@@ -1,0 +1,602 @@
+%%
+%% This is file `ft2unb.sty'.
+%% 
+%% This file has been created by Prof. Geovany Araujo Borges.
+%% Updates: 
+%% - 2011/05/27: Atualização para o modelo atual da UnB.
+%%               Inclusão de comando para geração de lista de termos e siglas e listas de códigos fonte 
+%%               Incluída contra-capa, folha de assinaturas e ficha catalográfica. 
+%%               Adicionados novos comandos \dia (dia da defesa), \numpublicacao, \siglapublicacao (por exemplo: PPGENE.DM),
+%%               \area (por Exemplo, Engenharia Elétrica), \programa (Mestrado, Doutorado) 
+%%               \siglaarea (por exemplo, ENE)
+%%               \autorendereco (endereço do autor). (por Manoel Campos da Silva Filho. http://manoelcampos.com)
+%% - 2007/04/09: Package incorporates a page for bibliographic information. Contributions from Nathalie Pinheiro, André Calmon and Renan Utida)
+%% - 2007/01/08: Package updated in order to support three co-authors. Proposed by Nathalie Pinheiro, André Calmon and Renan Utida)
+%% - 2006/03/19: Version 1.0 released.
+
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{template-FT-UnB/ft2unb}[2011/05/27 v1.5]
+
+\usepackage[pdftex]{color,graphicx}
+
+
+% Define as margens do documento
+\usepackage[lmargin=3.0cm, rmargin=2.50cm, tmargin=2.50cm, bmargin=2.50cm]{geometry} 
+
+
+%Acesso aos dados do documento como autor, título e data por meio dos comandos \MyAuthor, \MyTitle e \MyDate
+%Download do pacote em http://tug.ctan.org/tex-archive/macros/latex/contrib/authoraftertitle/
+%O mesmo foi extraído na pasta da dissertação
+\usepackage{authoraftertitle}
+
+\usepackage{listings,lipsum}
+%\usepackage{listingsutf8} 
+
+\usepackage{caption}
+\usepackage{nomencl} % Gerar lista de abreviações - http://franz.kollmann.in/latex/latex.html
+\usepackage{epsfig}  % Usar formato de figura .eps
+\usepackage{colortbl}
+
+\usepackage{hyperref}
+\usepackage{url}
+
+\usepackage{array}
+\usepackage{subfigure}
+\usepackage{amsfonts}
+\usepackage{amstext}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[thmmarks,amsmath]{ntheorem}
+\usepackage{boxedminipage}
+\usepackage{theorem}
+\usepackage{fancybox}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{ifthen}
+\usepackage{multirow}
+\usepackage{times}
+\usepackage{afterpage}
+\usepackage{color}
+\usepackage{colortbl}
+\usepackage{rotating}
+\usepackage{makeidx}
+\usepackage{indentfirst}
+\usepackage{epigraph}
+\usepackage{amsmath}
+\usepackage{latexsym}
+\usepackage{setspace}
+\usepackage[notlof,notlot,nottoc]{tocbibind}
+
+%http://www.tex.ac.uk/cgi-bin/texfaq2html?label=casechange
+\usepackage{textcase}
+
+
+%% Define a new 'leo' style for the package that will use a smaller font.
+\makeatletter
+\def\url@leostyle{%
+  \@ifundefined{selectfont}{\def\UrlFont{\sf}}{\def\UrlFont{\small\ttfamily}}}
+\makeatother
+%% Now actually use the newly defined style.
+\urlstyle{leostyle}
+
+
+%%% Fonte
+%\usepackage{times}
+%\renewcommand{\sfdefault}{phv}
+%\renewcommand{\rmdefault}{ptm}
+%\renewcommand{\ttdefault}{pcr}
+%\normalfont\selectfont
+
+%%% Dados do trabalho
+\newcommand{\totalpgs}[1]{\def\totalpgsstr{#1}}
+\newcommand{\numpublicacao}[1]{\def\numpublicacaostr{#1}}
+\newcommand{\siglapublicacao}[1]{\def\siglapublicacaostr{#1}}
+\newcommand{\autorendereco}[1]{\def\autorenderecostr{#1}}
+\newcommand{\dia}[1]{\def\dianum{#1}}
+\newcommand{\mes}[1]{\def\mesnome{#1}}
+\newcommand{\ano}[1]{\def\anonome{#1}}
+\newcommand{\autori}[1]{\def\autorinome{#1}}
+\newcommand{\autorii}[1]{\def\autoriinome{#1}}
+\newcommand{\autoriii}[1]{\def\autoriiinome{#1}}
+\newcommand{\titulolinhai}[1]{\def\titulolinhainome{#1}}
+\newcommand{\titulolinhaii}[1]{\def\titulolinhaiinome{#1}}
+\newcommand{\titulolinhaiii}[1]{\def\titulolinhaiiinome{#1}}
+\newcommand{\titulolinhaiv}[1]{\def\titulolinhaivnome{#1}}
+\newcommand{\membrodabancai}[1]{\def\membrodabancainome{#1}}
+\newcommand{\membrodabancaii}[1]{\def\membrodabancaiinome{#1}}
+\newcommand{\membrodabancaiii}[1]{\def\membrodabancaiiinome{#1}}
+\newcommand{\membrodabancaiv}[1]{\def\membrodabancaivnome{#1}}
+\newcommand{\membrodabancav}[1]{\def\membrodabancavnome{#1}}
+\newcommand{\membrodabancaifuncao}[1]{\def\membrodabancaifuncaonome{#1}}
+\newcommand{\membrodabancaiifuncao}[1]{\def\membrodabancaiifuncaonome{#1}}
+\newcommand{\membrodabancaiiifuncao}[1]{\def\membrodabancaiiifuncaonome{#1}}
+\newcommand{\membrodabancaivfuncao}[1]{\def\membrodabancaivfuncaonome{#1}}
+\newcommand{\membrodabancavfuncao}[1]{\def\membrodabancavfuncaonome{#1}}
+\newcommand{\tipodemonografia}[1]{\def\tipodemonografianome{#1}}
+\newcommand{\grau}[1]{\def\graunome{#1}}
+\newcommand{\area}[1]{\def\areastr{#1}}
+\newcommand{\siglaarea}[1]{\def\siglaareastr{#1}}
+\newcommand{\programa}[1]{\def\programastr{#1}}
+
+%%% Capa:
+\newcommand{\capaprincipal}{
+\begin{titlepage}
+\AddToShipoutPicture*{\BackgroundPicture{template-FT-UnB/template-images/capa_fundo.png}{21cm}}
+\begin{center}
+\vspace*{8.5cm}
+
+\begin{tabular}{>{\PreserveBacklash}c}
+{\Large\bf \ifthenelse{\equal{\titulolinhainome}{}}{\vspace*{7pt}}{\MakeUppercase\titulolinhainome}}\\
+{\Large\bf \ifthenelse{\equal{\titulolinhaiinome}{}}{\vspace*{7pt}}{\MakeUppercase\titulolinhaiinome}}\\
+{\Large\bf \ifthenelse{\equal{\titulolinhaiiinome}{}}{\vspace*{7pt}}{\MakeUppercase\titulolinhaiiinome}}\\ 
+{\Large\bf \ifthenelse{\equal{\titulolinhaivnome}{}}{\vspace*{7pt}}{\MakeUppercase\titulolinhaivnome}}
+\end{tabular}\\
+
+\vspace{1.2cm}
+\begin{tabular}{>{\PreserveBacklash}c}
+  {\large\bf\MakeUppercase\autorinome\vspace*{2mm}}
+\end{tabular}\\
+\ifthenelse{\equal{\autoriinome}{}}{\vspace*{6mm}}{
+	\begin{tabular}{>{\PreserveBacklash}c}
+	{\large\bf\MakeUppercase\autoriinome\vspace*{2mm}}
+	\end{tabular}\\}
+\ifthenelse{\equal{\autoriiinome}{}}{\vspace*{6mm}}{
+	\begin{tabular}{>{\PreserveBacklash}c}
+	{\large\bf\MakeUppercase\autoriiinome\vspace*{2mm}}
+	\end{tabular}\\}
+	
+\vspace*{2cm}
+
+{\bf\MakeUppercase{\tipodemonografianome \space de \space \programastr \space em \space \areastr}}\\
+{\bf\MakeUppercase{DEPARTAMENTO DE \space \areastr}}\\
+
+
+\vspace{3.8cm}
+{\Large\bf FACULDADE DE TECNOLOGIA}\\
+\vspace{1cm}
+{\Large\bf UNIVERSIDADE DE BRASÍLIA}
+\end{center}
+\end{titlepage}
+}
+
+%%% Contra Capa:
+\newcommand{\contracapa}{
+\begin{titlepage}
+\begin{center}
+{\large\bf UNIVERSIDADE DE BRASÍLIA}\\
+{\large\bf FACULDADE DE TECNOLOGIA}\\
+{\large\bf\MakeUppercase{DEPARTAMENTO DE \space \areastr}}\\
+
+\vspace*{8.5cm}
+
+\begin{tabular}{>{\PreserveBacklash}c}
+{\Large \ifthenelse{\equal{\titulolinhainome}{}}{\vspace*{7pt}}{\MakeUppercase\titulolinhainome}}\\
+{\Large \ifthenelse{\equal{\titulolinhaiinome}{}}{\vspace*{7pt}}{\MakeUppercase\titulolinhaiinome}}\\
+{\Large \ifthenelse{\equal{\titulolinhaiiinome}{}}{\vspace*{7pt}}{\MakeUppercase\titulolinhaiiinome}}\\ 
+{\Large \ifthenelse{\equal{\titulolinhaivnome}{}}{\vspace*{7pt}}{\MakeUppercase\titulolinhaivnome}}
+\end{tabular}\\
+
+\vspace{1.2cm}
+\begin{tabular}{>{\PreserveBacklash}c}
+  {\large\bf\MakeUppercase\autorinome\vspace*{2mm}}
+\end{tabular}\\
+\ifthenelse{\equal{\autoriinome}{}}{\vspace*{6mm}}{
+	\begin{tabular}{>{\PreserveBacklash}c}
+	{\large\bf\MakeUppercase\autoriinome\vspace*{2mm}}
+	\end{tabular}\\}
+\ifthenelse{\equal{\autoriiinome}{}}{\vspace*{6mm}}{
+	\begin{tabular}{>{\PreserveBacklash}c}
+	{\large\bf\MakeUppercase\autoriiinome\vspace*{2mm}}
+	\end{tabular}\\}
+
+\vspace*{2cm}
+
+{\bf Orientador: \space \MakeUppercase{\membrodabancainome}}\\
+	
+\vspace*{2cm}
+
+{\bf\MakeUppercase{\tipodemonografianome \space de \space \programastr \space em \space \areastr}}\\
+
+
+\vspace{2.3cm}
+{\bf\MakeUppercase{PUBLICAÇÃO \siglapublicacaostr \space - \space \numpublicacaostr}}\\
+{\normalsize\bf\MakeUppercase{BRASÍLIA-DF, \dianum \space DE \space \mesnome \space DE \anonome.}}\\
+\end{center}
+\end{titlepage}
+}
+
+
+%%% Lista assinaturas:
+\newcommand{\capaassinaturas}{
+\begin{titlepage}
+  \begin{center}
+    {\large \bf UNIVERSIDADE DE BRASÍLIA}\\
+    {\large \bf FACULDADE DE TECNOLOGIA}\\
+    {\large\bf\MakeUppercase{DEPARTAMENTO DE \space \areastr}}\\
+
+    \vspace{0.5cm}
+    %{\Large \tipodemonografianome}
+    
+    \vspace{0.7cm}
+    \begin{tabular}{>{\PreserveBacklash}c}
+    {\Large \ifthenelse{\equal{\titulolinhainome}{}}{\vspace*{7pt}}{\MakeUppercase\titulolinhainome}}\\
+    {\Large \ifthenelse{\equal{\titulolinhaiinome}{}}{\vspace*{7pt}}{\MakeUppercase\titulolinhaiinome}}\\
+    {\Large \ifthenelse{\equal{\titulolinhaiiinome}{}}{\vspace*{7pt}}{\MakeUppercase\titulolinhaiiinome}}\\ 
+    {\Large \ifthenelse{\equal{\titulolinhaivnome}{}}{\vspace*{7pt}}{\MakeUppercase\titulolinhaivnome}}
+    \end{tabular}
+
+    \vspace{0.5cm}
+    \begin{tabular}{>{\PreserveBacklash}c}
+	    {\large\bf\MakeUppercase\autorinome\vspace*{2mm}}
+    \end{tabular}\\
+    \ifthenelse{\equal{\autoriinome}{}}{\vspace*{6mm}}{
+	    \begin{tabular}{>{\PreserveBacklash}c}
+	    {\large\bf\autoriinome\vspace*{2mm}}
+	    \end{tabular}
+	  }
+
+    \ifthenelse{\equal{\autoriiinome}{}}{\vspace*{6mm}}{
+	    \begin{tabular}{>{\PreserveBacklash}c}
+	    {\large\bf\autoriiinome\vspace*{2mm}}
+	    \end{tabular}
+	  }    
+  \end{center}
+
+  \vspace{0.5cm}
+  \begin{center}
+	  \begin{tabular}{p{15cm}}
+  {\small{\MakeUppercase{\tipodemonografianome \space DE \space \programastr \space ACADÊMICO SUBMETIDA AO DEPARTAMENTO DE \space \areastr \space
+  DA FACULDADE DE TECNOLOGIA DA UNIVERSIDADE DE BRASÍLIA, COMO PARTE DOS REQUISITOS NECESSÁRIOS PARA A OBTENÇÃO DO GRAU DE \graunome \space
+  EM \areastr.}}}
+	  \end{tabular}
+  \end{center}
+  \vspace{2mm}
+
+  \begin{flushleft}    
+      \begin{tabular}{l}
+      {\large APROVADA POR:}\\
+      \end{tabular}
+  \end{flushleft}
+
+  \vspace*{0.7cm}
+
+  \begin{center}
+	  \begin{tabular}{c}
+    \ifthenelse{\equal{\membrodabancainome}{}}{ }{ \membrodabancainome \\ \membrodabancaifuncaonome \\\\}
+    \ifthenelse{\equal{\membrodabancainome}{}}{ }{ \membrodabancaiinome \\ \membrodabancaiifuncaonome  \\\\}  
+    \ifthenelse{\equal{\membrodabancainome}{}}{ }{ \membrodabancaiiinome \\ \membrodabancaiiifuncaonome  \\\\}
+    \ifthenelse{\equal{\membrodabancainome}{}}{ }{ \membrodabancaivnome \\ \membrodabancaivfuncaonome  \\\\} 
+    \ifthenelse{\equal{\membrodabancainome}{}}{ }{ \membrodabancavnome \\ \membrodabancavfuncaonome  \\}       
+	  \end{tabular}
+  \end{center}
+
+  %\the\day
+  \begin{flushright}{\normalsize\bf\MakeUppercase{BRASÍLIA, \space \dianum \space DE \space \mesnome \space DE \space \anonome.}}\end{flushright}
+\end{titlepage}
+}
+
+%%%Ficha catalográfica:
+\newcommand{\fichacatalografica}{
+\begin{titlepage}
+  	\begin{tabular}{|p{16cm}|}
+  	  \hline
+  		\large\bf{FICHA CATALOGRÁFICA} \\
+  		\MakeUppercase\autorinome
+  		\\
+  		\bf\MyTitle \\
+  		%ano de defesa, dia de defesa em romanos, número de páginas, largura da folha
+  		\bf{\anonome xv, \totalpgsstr p., 201x297 mm}\\
+  		(\siglaareastr/FT/UnB, \space \graunome, \space \areastr, \anonome)\\
+  		\tipodemonografianome \space de \space \programastr \space - \space Universidade de Brasília\\
+  		Faculdade de Tecnologia \space - \space Departamento de \space \areastr\\
+  		\hline
+  	\end{tabular}\\\\
+
+  	\begin{tabular}{p{16cm}}
+	  	{\large\bf REFERÊNCIA BIBLIOGRÁFICA}\\
+  		\\
+	  	\MakeUppercase\autorinome \space (\anonome) \space \MyTitle. \space \tipodemonografianome \space de \space \programastr \space 
+	  	em \space \areastr, \space Publicação \numpublicacaostr, 
+	  	\space Departamento de \space \areastr,\space Universidade de Brasília, Brasília, DF, \totalpgsstr p.\\
+  	\end{tabular}
+    
+    
+    
+    \vspace{2cm}
+  	\begin{tabular}{p{16cm}}
+    {\large\bf CESSÃO DE DIREITOS}\\
+    \\
+    AUTOR: \space \autorinome \\ 
+    TÍTULO: \space \MyTitle. \\ 
+    GRAU: \space \graunome \space\space\space\space ANO: \anonome
+  	\end{tabular}    
+    
+    \vspace{2cm}
+    
+  	\begin{tabular}{p{16cm}}    
+    É concedida à Universidade de Brasília permissão para reproduzir cópias desta \MakeLowercase\tipodemonografianome
+    \space de \space \programastr \space e para emprestar ou vender tais cópias somente para propósitos acadêmicos e científicos. 
+    O autor se reserva a outros direitos de publicação e nenhuma parte desta \MakeLowercase\tipodemonografianome \space de \space \programastr
+    \space pode ser reproduzida sem a autorização por escrito do autor.
+  	\end{tabular}        
+    
+    \vspace{2cm}
+    
+
+  	\begin{tabular}{p{15cm}}
+  	  \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ \\
+      \autorinome \\ 
+      \autorenderecostr
+  	\end{tabular}
+
+  \vspace{0.5cm}
+
+  %{\small{\MakeUppercase{}}}
+\end{titlepage}
+}
+
+%%% Decicatória
+\newcommand{\dedicatoriaautori}[1]{\def\dedicatoriaautorinome{#1}}
+\newcommand{\dedicatoriaautorii}[1]{\def\dedicatoriaautoriinome{#1}}
+\newcommand{\dedicatoriaautoriii}[1]{\def\dedicatoriaautoriiinome{#1}}
+
+\newcommand{\dedicatoria}{
+\begin{titlepage}
+\begin{center}
+\vspace*{\fill}
+\begin{flushright}
+\large
+\ifthenelse{\equal{\autoriinome}{}}{
+	\ifthenelse{\equal{\autoriiinome}{}}
+		{\bf Dedicatória\space\space\space\space}
+		{\bf Dedicatórias}}
+	{\bf Dedicatórias} 
+\end{flushright}
+\begin{center}
+	\ifthenelse{\equal{\autoriinome}{}}{
+		\begin{tabular}{p{0.90\textwidth}}
+			\textit{\dedicatoriaautorinome}\\
+		 \\
+		\raggedleft\textit{\autorinome}
+		\end{tabular}
+	}{
+	\ifthenelse{\equal{\autoriiinome}{}}{
+		\begin{tabular}{p{0.45\textwidth}p{0.01\textwidth}p{0.45\textwidth}}
+			\textit{\dedicatoriaautorinome} & &
+			\textit{\dedicatoriaautoriinome}.
+		\end{tabular}
+		\begin{tabular}{p{0.45\textwidth}p{0.01\textwidth}p{0.45\textwidth}}
+		& \\
+		\raggedleft\textit{\autoriinome} & &
+		\raggedleft\textit{\autorinome}
+		\end{tabular}
+	}{
+	
+		\begin{tabular}{p{0.45\textwidth}p{0.01\textwidth}p{0.45\textwidth}}
+		 	& \\
+			& & \textit{\dedicatoriaautorinome} 
+		\end{tabular}
+		\begin{tabular}{p{0.45\textwidth}p{0.01\textwidth}p{0.45\textwidth}}
+			& \\
+			& & \raggedleft\textit{\autorinome}
+		\end{tabular}
+		\begin{tabular}{p{0.45\textwidth}p{0.01\textwidth}p{0.45\textwidth}}
+			& \\
+			& & \textit{\dedicatoriaautoriinome}
+		\end{tabular}
+		\begin{tabular}{p{0.45\textwidth}p{0.01\textwidth}p{0.45\textwidth}}
+			& \\
+			& & \raggedleft\textit{\autoriinome}
+		\end{tabular}
+		\begin{tabular}{p{0.45\textwidth}p{0.01\textwidth}p{0.45\textwidth}}
+			& \\
+			& & \textit{\dedicatoriaautoriiinome}
+		\end{tabular}
+		\begin{tabular}{p{0.45\textwidth}p{0.01\textwidth}p{0.45\textwidth}}
+			& \\
+			& & \raggedleft\textit{\autoriiinome}
+		\end{tabular}
+		
+	}
+	}
+\end{center}
+\vspace*{2cm}
+\end{center}
+\end{titlepage}
+}
+
+%%% Agradecimentos
+\newcommand{\agradecimentosautori}[1]{\def\agradecimentosautorinome{#1}}
+\newcommand{\agradecimentosautorii}[1]{\def\agradecimentosautoriinome{#1}}
+\newcommand{\agradecimentosautoriii}[1]{\def\agradecimentosautoriiinome{#1}}
+
+\newcommand{\agradecimentos}{
+\begin{titlepage}
+\begin{flushleft}
+\large\bf Agradecimentos 
+\end{flushleft}
+\begin{center}
+	\vspace*{1cm}
+	\begin{tabular}{p{0.9\textwidth}}
+		\textit{\agradecimentosautorinome}\\
+	  \\
+  	\raggedleft\textit{\autorinome}\\
+	\end{tabular}
+	\vspace*{1cm}
+	\ifthenelse{\equal{\autoriinome}{}}{}{
+		\begin{tabular}{p{0.9\textwidth}}
+			\textit{\agradecimentosautoriinome}\\
+	  	\\
+	  	\raggedleft\textit{\autoriinome}\\
+		\end{tabular}
+	}
+	\vspace*{1cm}
+	\ifthenelse{\equal{\autoriiinome}{}}{}{
+		\begin{tabular}{p{0.9\textwidth}}
+			\textit{\agradecimentosautoriiinome}\\
+	  	\\
+	  	\raggedleft\textit{\autoriiinome}\\
+		\end{tabular}
+	}
+\end{center}
+\end{titlepage}
+}
+
+%%% Resumos opcionais do início de cada capítulo
+\newcommand{\resumodocapitulo}[1]{
+\vspace*{-0.8cm}
+\begin{flushright}
+	\begin{tabular}{p{0.5\textwidth}}
+		\itshape{#1}\\
+	\end{tabular}
+	\vspace*{-0.5cm}
+\end{flushright}
+}
+
+%%% Cabeçalhos dos resumos:
+\newcommand{\resumo}[2]{
+\begin{flushright}
+\hrule
+\vspace*{4mm}\large\bf\uppercase{#1} \\
+\end{flushright}
+{\normalsize\noindent#2}
+}
+
+%%% Fontes:
+\newcommand{\setfontarial}{}
+\newcommand{\setfonttimes}{}
+
+%%% Estilo dos capítulos, seções, sub-seções:
+\makeatletter
+
+\newcommand{\anexos}{
+%	\chapter*{\mdseries ANEXOS}
+	\chapter*{ANEXOS}
+	\addcontentsline{toc}{chapter}{{Anexos}}
+	\renewcommand{\appendixname}{ANEXO}
+	\appendix
+	\newcounter{noAnexo}
+	\renewcommand{\thechapter}{\Roman{noAnexo}}
+	\setcounter{noAnexo}{1}
+}
+
+%%% Figura de fundo da capa:
+\usepackage{eso-pic,graphicx}
+\newcommand\BackgroundPicture[2]{%
+  \setlength{\unitlength}{1pt}%
+  \put(0,\strip@pt\paperheight){%
+  \parbox[t][\paperheight]{\paperwidth}{%
+    \vfill
+    \centering\includegraphics[width=#2]{#1}
+    \vfill
+}}} 
+
+%%% Formatação do sumário:
+\renewcommand*\l@chapter[2]{%
+  \ifnum \c@tocdepth >\m@ne
+    \addpenalty{-\@highpenalty}%
+    \vskip 1.0em \@plus\p@
+    \setlength\@tempdima{1.5em}%
+    \begingroup
+      \parindent \z@ \rightskip \@pnumwidth
+      \parfillskip -\@pnumwidth
+      \leavevmode \bfseries
+      \advance\leftskip\@tempdima
+      \hskip -\leftskip
+      {#1}\nobreak\hfil\dotfill \nobreak\hb@xt@\@pnumwidth{\hss #2}\par
+      \penalty\@highpenalty
+    \endgroup
+  \fi}
+\renewcommand*\l@section{\@dottedtocline{1}{1.5em}{3.6em}}
+\renewcommand*\l@subsection{\@dottedtocline{2}{1.5em}{3.6em}}
+\renewcommand*\l@subsubsection{\@dottedtocline{3}{1.5em}{3.6em}}
+
+%%% Sumário:
+\newcommand{\sumario}{
+	\renewcommand{\contentsname}{SUMÁRIO}
+	{\renewcommand{\@dotsep}{0.5}\parskip=0pt\mdseries\scshape\tableofcontents}
+}
+
+%%% Lista de figuras:
+\newcommand{\listadefiguras}{
+	\renewcommand{\listfigurename}{LISTA DE FIGURAS}
+	{\renewcommand{\@dotsep}{0.5}\parskip=0pt\listoffigures}
+}
+
+%%% Lista de Códigos fonte (por Manoel Campos):
+\newcommand{\listadecodigosfonte}{
+	\renewcommand{\lstlistlistingname}{LISTA DE CÓDIGOS FONTE}
+	{\renewcommand{\@dotsep}{0.5}\parskip=0pt\lstlistoflistings}
+}
+
+
+%%% Lista de tabelas:
+\newcommand{\listadetabelas}{
+	\renewcommand{\listtablename}{LISTA DE TABELAS}
+	{\renewcommand{\@dotsep}{0.5}\parskip=0pt\listoftables}
+}
+
+%%% Lista de símbolos: apenas o formato do título.
+\newcommand{\listadesimbolos}{
+	\renewcommand{\contentsname}{LISTA DE SIMBOLOS}
+	\listoftables 
+}
+
+\makeatother
+ 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Lengths
+
+\geometry{headsep=.2in,footskip=0.7in,top=2cm,textwidth=16.32cm}                            
+\setlength{\evensidemargin}{-0.2cm}
+\setlength{\oddsidemargin}{-0.2cm}
+\renewcommand{\baselinestretch}{1.2}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Macros
+\newcommand{\PreserveBacklash}[1]{\let\temp=\\#1\let\\=\temp}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Espaço entre parágrafos
+\parskip=6pt
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Red\'{e}finition de cleardoublepage pour que les pages vides s\'{e}parant
+% les chapitres soient vraiment vides 
+\makeatletter
+\def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
+ \hbox{}
+ \vspace*{\fill}% test \vspace{\fill}
+ \thispagestyle{empty}
+ \newpage
+ \if@twocolumn\hbox{}\newpage\fi\fi\fi}
+\makeatother
+
+%Define captions em português para figuras, tabelas, capítulos, etc
+\renewcommand\figurename{Figura}
+\renewcommand\tablename{Tabela}
+
+\usepackage{listings}  
+\renewcommand\lstlistingname{Listagem}
+\renewcommand{\chaptername}{Capítulo}
+\renewcommand{\nomname}{LISTA DE TERMOS E SIGLAS}
+\renewcommand{\bibname}{REFERÊNCIAS BIBLIOGRÁFICAS} %Define o Caption da seção de bibliografia
+
+\AfterEndPreamble{%
+	\sloppy %formata o texto de forma justificado
+}
+
+\AtBeginDocument{%
+	\setcounter{secnumdepth}{3} % numeracao de seções até nível 3
+	\setcounter{tocdepth}{2} % numeracao de seções no sumário até nível 2
+	\pagestyle{empty}	
+	
+	\capaprincipal
+	\contracapa
+	\capaassinaturas
+	\frontmatter %inicia a numeração em romanos
+	\fichacatalografica	
+}
+

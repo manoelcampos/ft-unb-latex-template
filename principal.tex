@@ -1,0 +1,131 @@
+\documentclass[a4paper,12pt,openright,titlepage,oneside]{book}
+
+%\usepackage[english,brazil]{babel} 
+%Define regra de gramática para separar síbalas {babel}
+%e altera os títulos (como chapters, sections, references) para português
+\usepackage[brazil]{babel}
+
+% Definir que vai trabalhar com codificacão utf8 e inputenc -> entrada de acentos normal
+\usepackage[utf8]{inputenc} 
+
+% Adição do pacote do template da UnB
+\usepackage{template-FT-UnB/ft2unb}
+
+\DeclareGraphicsExtensions{.jpg,.pdf,.mps,.png,.gif, .eps}
+\graphicspath{imagens} %define diretório de imagens
+
+%Arquivo com lista com hifenização correta de algumas palavras.
+%Defina novas palavras no arquivo a medida que verificar que a hifenização automática
+%etá errada para tais palavras.
+\input{hifenizacao} 
+
+% ALTERE OS VALORES DENTRO DAS CHAVES DOS COMANDOS NESTA SEÇÃO PARA INCLUIR OS SEUS DADO E DADOS DA SUA
+% DISSERTAÇÃO DE MESTRADO OU TESE DE DOUTORADO
+% -----------------------------------------------------------------------------------------------------
+
+%\onehalfspacing
+\title{TÍTULO COMPLETO DA SUA DISSERTAÇÃO/TESE}
+\author{SEU NOME COMPLETO}
+\date{2011-03-16} %data da defesa
+
+\grau{Mestre} %Mestre ou Doutor
+\area{Engenharia Elétrica} %Nome do curso
+\siglaarea{ENE} %Sigla do departamento
+\tipodemonografia{Dissertação} %Dissertação ou Tese
+\programa{Mestrado} %Mestrado ou Doutorado
+\autorendereco{SEU ENDEREÇO COMPLETO AQUI.} %Endereço do autor da dissertação/tese
+\totalpgs{147} %total de páginas atualmente na sua dissertação
+\dia{16} %dia da defesa
+\mes{Junho} %mês da defesa
+\ano{2011} %ano da defesa
+\numpublicacao{xxx/AAAA} %número da publicação (após a defesa, tal número deve ser obtido na secretaria)
+
+%PPGENE.DM  = Programa de Pós Graduação em ENgenharia Elétrica.Dissertação de Mestrado
+%PPGENE.TD  = Programa de Pós Graduação em ENgenharia Elétrica.Tese de Doutorado
+\siglapublicacao{PPGENE.DM}
+
+\titulolinhai{TÍTULO DA SUA}
+\titulolinhaii{DISSERTAÇÃO DE MESTRADO}
+\titulolinhaiii{OU TESE DE DOUTORADO}
+\titulolinhaiv{}
+\autori{SEU NOME COMPLETO AQUI.}
+%\autorii{}
+%\autoriii{}
+
+\membrodabancai{Prof. Dr. NOME DO SEU ORIENTADOR, ENE/UnB}
+\membrodabancaifuncao{Orientador}
+\membrodabancaii{Prof. Fulano de Tal 2, ENE/UnB}
+\membrodabancaiifuncao{Examinador interno}
+\membrodabancaiii{Prof. Fulano de Tal 3, ENE/UnB}
+\membrodabancaiiifuncao{Examinador interno}
+\membrodabancaiv{Prof. Fulano de Tal 4, EESC/USP}
+\membrodabancaivfuncao{Examinador externo}
+\membrodabancav{}
+\membrodabancavfuncao{}
+% -----------------------------------------------------------------------------------------------------
+
+%line-numbers, inputencoding=utf8/latin1
+%Define o estilo para listagens de código fonte
+\lstset{
+  numbers=left, %numeração de linhas à esquerda
+  stepnumber=1,
+  firstnumber=1,
+  numberstyle=\tiny,
+  extendedchars=true,
+  frame=none,
+  basicstyle=\footnotesize,
+  stringstyle=\ttfamily,
+  showstringspaces=false,
+  %language=Java, %deve ser definida na inclusão de cada trecho de código, pois podem existir linguagens diferentes em exemplos diferentes
+  breaklines=true,
+  breakautoindent=true,
+  %estilos de comentário de uma e várias linhas
+  morecomment=[l]{--}, morecomment=[s]{/*}{*/}, morecomment=[s]{<!--}{-->}, morecomment=[s]{--[[}{--]]}
+}
+
+\makeindex
+\makenomenclature %Necessário para gerar lista de siglas
+
+\begin{document}
+	\pdfbookmark[0]{Agradecimentos}{agradecimentos}
+	\include{agradecimentos}
+	\include{resumo}
+	
+	\pdfbookmark[0]{Sumário}{sumario}
+	\sumario
+	
+	\pdfbookmark[0]{Lista de Figuras}{listafiguras}
+	\listadefiguras
+	
+	\pdfbookmark[0]{Lista de Tabelas}{listatabelas}
+	\listadetabelas
+	
+	\pdfbookmark[0]{Lista de Códigos Fonte}{listacodigosfonte}
+	\listadecodigosfonte
+	
+	\renewcommand{\nomname}{LISTA DE TERMOS E SIGLAS} %Define um caption à lista de siglas
+	%Inclui a lista de siglas 
+	\pdfbookmark[0]{Lista de Termos e Siglas}{nomenclatura}
+	\printnomenclature[2.5cm] 
+	
+	\mainmatter %Inicia a numeracao normal cardinal
+	\setcounter{page}{1} \pagenumbering{arabic} \pagestyle{plain}
+	
+	\include{introducao}
+	\include{capitulo1}
+	\include{capitulo2} 
+	\include{conclusao} 
+		
+	%\bibliographystyle{abnt-num} % estilo bibliográfico ABNT numérico
+	%\bibliographystyle{abnt-alf} % estilo bibliográfico ABNT alfabético
+	\bibliographystyle{sbc}  % estilo bibliográfico da Sociedade Brasileira de Computação (SBC)
+	
+	%\renewcommand{\bibname}{REFERÊNCIAS BIBLIOGRÁFICAS} %Define o Caption da seção de bibliografia
+	%\addcontentsline{toc}{chapter}{REFERÊNCIAS BIBLIOGRÁFICAS}
+	
+	%não pode ter espaço entre os nomes dos arquivos bib
+	\bibliography{referencias}
+	
+	\include{apendice}
+\end{document}
+

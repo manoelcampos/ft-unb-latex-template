@@ -1,0 +1,50 @@
+\chapter{Arquitetura de comércio eletrônico para a TV Digital} \label{capitulo1}
+%label cria um rótulo para o objeto, para permitir que ele seja referenciado com o comando \ref{nome-do-rotulo}
+
+
+Neste capítulo é apresentada uma arquitetura para provimento de comércio eletrônico
+para o Sistema Brasileiro de TV Digital (SBTVD) \nomenclature{SBTVD}{Sistema Brasileiro de TV Digital}. A mesma é uma arquitetura distribuída, baseada em componentes
+reutilizáveis, os \textit{Web Services}, conhecida como Arquitetura Orientada a Serviços.
+
+Segundo \cite{soares2007ginga}:
+
+\begin{quote}
+	Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vesti- bulum ut, placerat ac, adipiscing vitae, felis. Curabitur dictum gravida mauris. Nam arcu libero, nonummy eget, consectetuer id, vulputate a, magna. 
+\end{quote}
+
+Desta forma, a arquitetura proposta foi definida, incluindo a implementação de um \textit{framework} de comunicação (baseado nos protocolos HTTP e SOAP) que é apresentado sucintamente neste capítulo, e em mais detalhes no Capítulo \ref{capitulo2}. Mais detalhes podem ser consultados em \cite{soares2007ginga}. Veja um exemplo na Listagem \ref{list:server}, que foi adaptada de \url{http://manoelcampos.com}.
+
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae, felis. Curabitur dictum gravida mauris. Nam arcu libero, no- nummy eget, consectetuer id, vulputate a, magna. Donec vehicula augue eu neque. Pel- lentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris ut leo. Cras viverra metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices. Phasellus eu tellus sit amet tortor gravida placerat. Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices bibendum. Aenean fauci- bus. Morbi dolor nulla, malesuada eu, pulvinar at, mollis ac, nulla. Curabitur auctor semper nulla. Donec varius orci eget risus. Duis nibh mi, congue eu, accumsan eleifend, sagittis quis, diam. Duis eget orci sit amet orci dignissim rutrum.
+
+Nulla malesuada porttitor diam. Donec felis erat, congue non, volutpat at, tincidunt tristi- que, libero. Vivamus viverra fermentum felis. Donec nonummy pellentesque ante. Phasellus adipiscing semper elit. Proin fermentum massa ac quam. Sed diam turpis, molestie vitae, placerat a, molestie nec, leo. Maecenas lacinia. Nam ipsum ligula, eleifend at, accumsan nec, suscipit a, ipsum. Morbi blandit ligula feugiat magna. Nunc eleifend consequat lorem. Sed lacinia nulla vitae enim. Pellentesque tincidunt purus vel magna. Integer non enim. Praesent euismod nunc eu purus. Donec bibendum quam in tellus. Nullam cursus pulvinar lectus. Donec et mi. Nam vulputate metus eu enim. Vestibulum pellentesque felis eu massa. 
+
+\lstset{caption=Exemplo de aplicação servidora, label=list:server}
+\begin{lstlisting}[language=C]
+int main()
+{ 
+    FILE *fp;     int len;     
+    static const int SIZE = 1024;
+    struct sockaddr_in me, target;
+    int sock=socket(AF_INET,SOCK_DGRAM,0);
+    char arquivo[SIZE];
+    me.sin_family=AF_INET;
+    me.sin_addr.s_addr=htonl(INADDR_ANY); // endereco IP local 
+    me.sin_port=htons(0); // porta local (0=auto assign)
+    bind(sock,(struct sockaddr *)&me,sizeof(me));
+    target.sin_family=AF_INET;
+    target.sin_addr.s_addr=inet_addr("192.168.68.217"); // host local 
+    target.sin_port=htons(8450); // porta de destino 
+
+    if ((fp = fopen("video1.mp4","rb")) == NULL){
+        printf("Arquivo nao pode ser aberto.\n"); return -1;
+    }
+
+    while(!feof(fp)) {
+        len = fread(arquivo, 1, sizeof(arquivo), fp);
+        sendto(sock,arquivo,sizeof(arquivo),0,(struct sockaddr *)&target,sizeof(target));
+    }
+    sendto(sock,"FIM",sizeof("FIM"),0,(struct sockaddr *)&target,sizeof(target));
+    close(sock);
+    return 0;
+}
+\end{lstlisting}

@@ -1,0 +1,396 @@
+%%
+%% This is file `ft1unb.sty'.
+%% 
+%% This file has been created by Prof. Geovany Araujo Borges.
+%% Updates: 
+%% - 2007/04/09: Package incorporates a page for bibliographic information. Contributions from Nathalie Pinheiro, André Calmon and Renan Utida)
+%% - 2007/01/08: Package updated in order to support three co-authors. Proposed by Nathalie Pinheiro, André Calmon and Renan Utida)
+%% - 2006/03/19: Version 1.0 released.
+
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{ft1unb}[2007/04/09 v2.0]
+\usepackage{times}
+\usepackage{helvet}
+\usepackage{soul}
+
+%%% Dados do trabalho
+\newcommand{\mes}[1]{\def\mesnome{#1}}
+\newcommand{\ano}[1]{\def\anonome{#1}}
+\newcommand{\autori}[1]{\def\autorinome{#1}}
+\newcommand{\autorii}[1]{\def\autoriinome{#1}}
+\newcommand{\autoriii}[1]{\def\autoriiinome{#1}}
+\newcommand{\titulolinhai}[1]{\def\titulolinhainome{#1}}
+\newcommand{\titulolinhaii}[1]{\def\titulolinhaiinome{#1}}
+\newcommand{\titulolinhaiii}[1]{\def\titulolinhaiiinome{#1}}
+\newcommand{\titulolinhaiv}[1]{\def\titulolinhaivnome{#1}}
+\newcommand{\membrodabancai}[1]{\def\membrodabancainome{#1}}
+\newcommand{\membrodabancaii}[1]{\def\membrodabancaiinome{#1}}
+\newcommand{\membrodabancaiii}[1]{\def\membrodabancaiiinome{#1}}
+\newcommand{\membrodabancaiv}[1]{\def\membrodabancaivnome{#1}}
+\newcommand{\membrodabancav}[1]{\def\membrodabancavnome{#1}}
+\newcommand{\membrodabancaifuncao}[1]{\def\membrodabancaifuncaonome{#1}}
+\newcommand{\membrodabancaiifuncao}[1]{\def\membrodabancaiifuncaonome{#1}}
+\newcommand{\membrodabancaiiifuncao}[1]{\def\membrodabancaiiifuncaonome{#1}}
+\newcommand{\membrodabancaivfuncao}[1]{\def\membrodabancaivfuncaonome{#1}}
+\newcommand{\membrodabancavfuncao}[1]{\def\membrodabancavfuncaonome{#1}}
+\newcommand{\tipodemonografia}[1]{\def\tipodemonografianome{#1}}
+\newcommand{\grau}[1]{\def\graunome{#1}}
+
+%%% Capa:
+\newcommand{\capaprincipal}{
+\begin{titlepage}
+\AddToShipoutPicture*{\BackgroundPicture{images/capa_fundo.eps}{21cm}}
+\begin{center}
+\vspace*{8.5cm}
+{\Large \tipodemonografianome}\\
+\vspace{1.2cm}
+\begin{tabular}{>{\PreserveBacklash}c}
+{\setfontarial\Large\bf \ifthenelse{\equal{\titulolinhainome}{}}{\vspace*{7pt}}{\titulolinhainome}}\\
+{\setfontarial\Large\bf \ifthenelse{\equal{\titulolinhaiinome}{}}{\vspace*{7pt}}{\titulolinhaiinome}}\\
+{\setfontarial\Large\bf \ifthenelse{\equal{\titulolinhaiiinome}{}}{\vspace*{7pt}}{\titulolinhaiiinome}}\\ {\setfontarial\Large\bf \ifthenelse{\equal{\titulolinhaivnome}{}}{\vspace*{7pt}}{\titulolinhaivnome}}
+\end{tabular}\\
+\vspace*{2cm}
+\begin{tabular}{>{\PreserveBacklash}c}
+{\setfontarial\large\bf\autorinome\vspace*{2mm}}
+\end{tabular}\\
+
+\ifthenelse{\equal{\autoriinome}{}}{\vspace*{6mm}}{
+	\begin{tabular}{>{\PreserveBacklash}c}
+	{\setfontarial\large\bf\autoriinome\vspace*{2mm}}
+	\end{tabular}\\}
+
+\ifthenelse{\equal{\autoriiinome}{}}{\vspace*{6mm}}{
+	\begin{tabular}{>{\PreserveBacklash}c}
+	{\setfontarial\large\bf\autoriiinome\vspace*{2mm}}
+	\end{tabular}\\}
+
+\vspace{2.3cm}
+{\setfonttimes\normalsize\bf Brasília, \mesnome \space de \anonome}\\
+\vspace{1.5cm}
+{\setfontarial\Large\bf UNIVERSIDADE DE BRASÍLIA}\\
+\vspace{1cm}
+{\setfontarial\large FACULDADE DE TECNOLOGIA}
+\end{center}
+\end{titlepage}
+}
+
+%%% Contra-capa:
+\newcommand{\capaassinaturas}{
+\begin{titlepage}
+\begin{center}
+{\setfonttimes\large UNIVERSIDADE DE BRASILIA}\\
+{\setfonttimes\large Faculdade de Tecnologia}\\
+\vspace{4cm}
+{\setfontarial\Large\tipodemonografianome}\\
+\vspace{0.7cm}
+\begin{tabular}{>{\PreserveBacklash}c}
+{\setfontarial\Large\bf \ifthenelse{\equal{\titulolinhainome}{}}{\vspace*{7pt}}{\titulolinhainome}}\\
+{\setfontarial\Large\bf \ifthenelse{\equal{\titulolinhaiinome}{}}{\vspace*{7pt}}{\titulolinhaiinome}}\\
+{\setfontarial\Large\bf \ifthenelse{\equal{\titulolinhaiiinome}{}}{\vspace*{7pt}}{\titulolinhaiiinome}}\\ {\setfontarial\Large\bf \ifthenelse{\equal{\titulolinhaivnome}{}}{\vspace*{7pt}}{\titulolinhaivnome}}
+\end{tabular}\\
+\vspace{1.0cm}
+\begin{tabular}{>{\PreserveBacklash}c}
+	{\setfontarial\large\bf\autorinome\vspace*{2mm}}
+\end{tabular}\\
+\ifthenelse{\equal{\autoriinome}{}}{\vspace*{6mm}}{
+	\begin{tabular}{>{\PreserveBacklash}c}
+	{\setfontarial\large\bf\autoriinome\vspace*{2mm}}
+	\end{tabular}\\}
+
+\ifthenelse{\equal{\autoriiinome}{}}{\vspace*{6mm}}{
+	\begin{tabular}{>{\PreserveBacklash}c}
+	{\setfontarial\large\bf\autoriiinome\vspace*{2mm}}
+	\end{tabular}\\}
+
+\vspace{1.0cm}
+{\setfonttimes\large\it Relatório submetido ao Departamento de Engenharia}\vspace{2mm}\\
+{\setfonttimes\large\it Elétrica como requisito parcial para obtenção}\vspace{2mm} \\
+{\setfonttimes\large\it do grau de \graunome}\\
+\vspace*{1.5cm}
+{\setfontarial\large Banca Examinadora}\\
+\vspace*{10mm}
+{\small
+\def\arraystretch{0.5}
+ \begin{tabular}{p{0.45\textwidth}p{0.45\textwidth}p{0cm}}
+  \ifthenelse{\equal{\membrodabancainome}{}}{& \\}{\small\membrodabancainome & \hrule \\} 
+  \ifthenelse{\equal{\membrodabancainome}{}}{& \\}{\small\it\membrodabancaifuncaonome & \\ \\ \\} 
+  \ifthenelse{\equal{\membrodabancaiinome}{}}{& \\}{\small\membrodabancaiinome & \hrule \\} 
+  \ifthenelse{\equal{\membrodabancaiinome}{}}{& \\}{\small\it\membrodabancaiifuncaonome & \\ \\ \\} 
+  \ifthenelse{\equal{\membrodabancaiiinome}{}}{& \\}{\small\membrodabancaiiinome & \hrule \\} 
+  \ifthenelse{\equal{\membrodabancaiiinome}{}}{& \\}{\small\it\membrodabancaiiifuncaonome & \\ \\ \\} 
+  \ifthenelse{\equal{\membrodabancaivnome}{}}{& \\}{\small\membrodabancaivnome & \hrule \\} 
+  \ifthenelse{\equal{\membrodabancaivnome}{}}{& \\}{\small\it\membrodabancaivfuncaonome & \\ \\ \\} 
+  \ifthenelse{\equal{\membrodabancavnome}{}}{& \\}{\small\membrodabancavnome & \hrule} 
+  \ifthenelse{\equal{\membrodabancavnome}{}}{& \\}{\small\it\membrodabancavfuncaonome & } 
+  \end{tabular}
+\def\arraystretch{1.0}
+}
+\end{center}
+\end{titlepage}
+}
+
+%%% Decicatória
+\newcommand{\dedicatoriaautori}[1]{\def\dedicatoriaautorinome{#1}}
+\newcommand{\dedicatoriaautorii}[1]{\def\dedicatoriaautoriinome{#1}}
+\newcommand{\dedicatoriaautoriii}[1]{\def\dedicatoriaautoriiinome{#1}}
+
+\newcommand{\dedicatoria}{
+\begin{titlepage}
+\begin{center}
+\vspace*{\fill}
+\begin{flushright}
+\large
+\ifthenelse{\equal{\autoriinome}{}}{
+	\ifthenelse{\equal{\autoriiinome}{}}
+		{\setfontarial\bf Dedicatória\space\space\space\space}
+		{\setfontarial\bf Dedicatórias}}
+	{\setfontarial\bf Dedicatórias} 
+\end{flushright}
+\begin{center}
+	\ifthenelse{\equal{\autoriinome}{}}{
+		\begin{tabular}{p{0.90\textwidth}}
+			\setfonttimes\textit{\dedicatoriaautorinome}\\
+		 \\
+		\raggedleft\setfonttimes\textit{\autorinome}
+		\end{tabular}
+	}{
+	\ifthenelse{\equal{\autoriiinome}{}}{
+		\begin{tabular}{p{0.45\textwidth}p{0.01\textwidth}p{0.45\textwidth}}
+			\setfonttimes\textit{\dedicatoriaautorinome} & &
+			\setfonttimes\textit{\dedicatoriaautoriinome}.
+		\end{tabular}
+		\begin{tabular}{p{0.45\textwidth}p{0.01\textwidth}p{0.45\textwidth}}
+		& \\
+		\raggedleft\setfonttimes\textit{\autoriinome} & &
+		\raggedleft\setfonttimes\textit{\autorinome}
+		\end{tabular}
+	}{
+	
+		\begin{tabular}{p{0.45\textwidth}p{0.01\textwidth}p{0.45\textwidth}}
+		 	& \\
+			& & \setfonttimes\textit{\dedicatoriaautorinome} 
+		\end{tabular}
+		\begin{tabular}{p{0.45\textwidth}p{0.01\textwidth}p{0.45\textwidth}}
+			& \\
+			& & \raggedleft\setfonttimes\textit{\autorinome}
+		\end{tabular}
+		\begin{tabular}{p{0.45\textwidth}p{0.01\textwidth}p{0.45\textwidth}}
+			& \\
+			& & \setfonttimes\textit{\dedicatoriaautoriinome}
+		\end{tabular}
+		\begin{tabular}{p{0.45\textwidth}p{0.01\textwidth}p{0.45\textwidth}}
+			& \\
+			& & \raggedleft\setfonttimes\textit{\autoriinome}
+		\end{tabular}
+		\begin{tabular}{p{0.45\textwidth}p{0.01\textwidth}p{0.45\textwidth}}
+			& \\
+			& & \setfonttimes\textit{\dedicatoriaautoriiinome}
+		\end{tabular}
+		\begin{tabular}{p{0.45\textwidth}p{0.01\textwidth}p{0.45\textwidth}}
+			& \\
+			& & \raggedleft\setfonttimes\textit{\autoriiinome}
+		\end{tabular}
+		
+	}
+	}
+\end{center}
+\vspace*{2cm}
+\end{center}
+\end{titlepage}
+}
+
+%%% Agradecimentos
+\newcommand{\agradecimentosautori}[1]{\def\agradecimentosautorinome{#1}}
+\newcommand{\agradecimentosautorii}[1]{\def\agradecimentosautoriinome{#1}}
+\newcommand{\agradecimentosautoriii}[1]{\def\agradecimentosautoriiinome{#1}}
+
+\newcommand{\agradecimentos}{
+\begin{titlepage}
+\begin{flushleft}
+\large\setfontarial\bf Agradecimentos 
+\end{flushleft}
+\begin{center}
+	\vspace*{1cm}
+	\begin{tabular}{p{0.9\textwidth}}
+		\setfonttimes\textit{\agradecimentosautorinome}\\
+	  \\
+  	\raggedleft\setfonttimes\textit{\autorinome}\\
+	\end{tabular}
+	\vspace*{1cm}
+	\ifthenelse{\equal{\autoriinome}{}}{}{
+		\begin{tabular}{p{0.9\textwidth}}
+			\setfonttimes\textit{\agradecimentosautoriinome}\\
+	  	\\
+	  	\raggedleft\setfonttimes\textit{\autoriinome}\\
+		\end{tabular}
+	}
+	\vspace*{1cm}
+	\ifthenelse{\equal{\autoriiinome}{}}{}{
+		\begin{tabular}{p{0.9\textwidth}}
+			\setfonttimes\textit{\agradecimentosautoriiinome}\\
+	  	\\
+	  	\raggedleft\setfonttimes\textit{\autoriiinome}\\
+		\end{tabular}
+	}
+\end{center}
+\end{titlepage}
+}
+
+%%% Resumos opcionais do início de cada capítulo
+\newcommand{\resumodocapitulo}[1]{
+\vspace*{-0.8cm}
+\begin{flushright}
+	\begin{tabular}{p{0.5\textwidth}}
+		\setfonttimes\itshape{#1}\\
+	\end{tabular}
+	\vspace*{-0.5cm}
+\end{flushright}
+}
+
+%%% Cabeçalhos dos resumos:
+\newcommand{\resumo}[2]{
+\begin{flushright}
+\hrule
+\vspace*{4mm}\large\setfontarial\bf\uppercase{#1} \\
+\end{flushright}
+{\setfonttimes\mdseries\noindent#2}
+}
+
+%%% Fontes:
+\newcommand{\setfontarial}{\renewcommand{\familydefault}{\sfdefault}\sffamily}
+\newcommand{\setfonttimes}{\renewcommand{\familydefault}{\rmdefault}\rmfamily}
+
+%%% Estilo dos capítulos, seções, sub-seções:
+\makeatletter
+\renewcommand{\@makechapterhead}[1]{%
+  {\parindent \z@ \raggedleft \setfontarial\bfseries 
+        \LARGE \thechapter \space\space 
+    \uppercase{#1}\par
+    \vskip 40\p@
+  }
+}
+\renewcommand{\@makeschapterhead}[1]{%
+  {\parindent \z@ \raggedleft \setfontarial\bfseries
+        \LARGE #1\par
+    \vskip 40\p@ 
+  }
+}
+\renewcommand{\section}{\@startsection{section}
+	{1} % nivel
+	{1em} % recuo
+	{30pt} % espaço antes
+	{12pt\setfonttimes\mdseries} % espaço após, com reformatação.
+	{\sffamily\bfseries\large\uppercase}} % formato da fonte
+
+\renewcommand{\subsection}{\@startsection{subsection}
+	{2} % nivel
+	{1em} % recuo
+	{18pt} % espaço antes
+	{6pt\setfonttimes\mdseries} % espaço após, com reformatação.
+	{\sffamily\bfseries\normalsize}} % formato da fonte
+
+\renewcommand{\subsubsection}{\@startsection{subsubsection}
+	{3} % nivel
+	{1em} % recuo
+	{18pt} % espaço antes
+	{6pt\setfonttimes\mdseries} % espaço após, com reformatação.
+	{\sffamily\mdseries\normalsize}} % formato da fonte
+
+\newcommand{\anexos}{
+	\chapter*{\setfontarial\mdseries ANEXOS}
+	\addcontentsline{toc}{chapter}{{Anexos}}
+	\renewcommand{\appendixname}{ANEXO}
+	\appendix
+	\newcounter{noAnexo}
+	\renewcommand{\thechapter}{\Roman{noAnexo}}
+	\setcounter{noAnexo}{1}
+}
+
+%%% Figura de fundo da capa:
+\usepackage{eso-pic,graphicx}
+\newcommand\BackgroundPicture[2]{%
+  \setlength{\unitlength}{1pt}%
+  \put(0,\strip@pt\paperheight){%
+  \parbox[t][\paperheight]{\paperwidth}{%
+    \vfill
+    \centering\includegraphics[width=#2]{#1}
+    \vfill
+}}} 
+
+%%% Formatação do sumário:
+\renewcommand*\l@chapter[2]{%
+  \ifnum \c@tocdepth >\m@ne
+    \addpenalty{-\@highpenalty}%
+    \vskip 1.0em \@plus\p@
+    \setlength\@tempdima{1.5em}%
+    \begingroup
+      \parindent \z@ \rightskip \@pnumwidth
+      \parfillskip -\@pnumwidth
+      \leavevmode \bfseries
+      \advance\leftskip\@tempdima
+      \hskip -\leftskip
+      \uppercase{#1}\nobreak\hfil\dotfill \nobreak\hb@xt@\@pnumwidth{\hss #2}\par
+      \penalty\@highpenalty
+    \endgroup
+  \fi}
+\renewcommand*\l@section{\@dottedtocline{1}{1.5em}{3.6em}}
+\renewcommand*\l@subsection{\@dottedtocline{2}{1.5em}{3.6em}}
+\renewcommand*\l@subsubsection{\@dottedtocline{3}{1.5em}{3.6em}}
+
+%%% Sumário:
+\newcommand{\sumario}{
+	\renewcommand{\contentsname}{\setfontarial\mdseries SUMÁRIO}
+	{\renewcommand{\@dotsep}{0.5}\parskip=0pt\setfontarial\mdseries\scshape\tableofcontents}
+}
+
+%%% Lista de figuras:
+\newcommand{\listadefiguras}{
+	\renewcommand{\listfigurename}{\setfontarial\mdseries LISTA DE FIGURAS}
+	{\renewcommand{\@dotsep}{0.5}\parskip=0pt\listoffigures}
+}
+
+%%% Lista de tabelas:
+\newcommand{\listadetabelas}{
+	\renewcommand{\listtablename}{\setfontarial\mdseries LISTA DE TABELAS}
+	{\renewcommand{\@dotsep}{0.5}\parskip=0pt\listoftables}
+}
+
+%%% Lista de símbolos: apenas o formato do título.
+\newcommand{\listadesimbolos}{
+	\renewcommand{\contentsname}{\setfontarial\mdseries LISTA DE SÍMBOLOS}
+	\listoftables 
+}
+
+\makeatother
+ 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Lengths
+
+\geometry{headsep=.2in,footskip=0.7in,top=2cm,textwidth=16.32cm}                            
+\setlength{\evensidemargin}{-0.2cm}
+\setlength{\oddsidemargin}{-0.2cm}
+\renewcommand{\baselinestretch}{1.2}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Macros
+\newcommand{\PreserveBacklash}[1]{\let\temp=\\#1\let\\=\temp}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Espaço entre parágrafos
+\parskip=6pt
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Red\'{e}finition de cleardoublepage pour que les pages vides s\'{e}parant
+% les chapitres soient vraiment vides 
+\makeatletter
+\def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
+ \hbox{}
+ \vspace*{\fill}% test \vspace{\fill}
+ \thispagestyle{empty}
+ \newpage
+ \if@twocolumn\hbox{}\newpage\fi\fi\fi}
+\makeatother
+
+
