@@ -83,10 +83,27 @@
   morecomment=[l]{--}, morecomment=[s]{/*}{*/}, morecomment=[s]{<!--}{-->}, morecomment=[s]{--[[}{--]]}
 }
 
+% Adição de metadados no PDF (propriedades do documento PDF)
+\makeatletter
+	 \hypersetup{
+		 pdftoolbar=true,        % show Acrobat’s toolbar?
+		 pdfmenubar=true,        % show Acrobat’s menu?
+		 pdffitwindow=false,     % window fit to page when opened
+		 pdfstartview={FitH},    % fits the width of the page to the window	 
+		 pdftitle={\@title},
+		 pdfauthor={\@author},
+		 pdfsubject={\tipodemonografianome \ de\ \programastr \ em\ \areastr},   % subject of the document
+		 pdfcreationdate={\pdfdate}
+	 }
+\makeatother
+
+
 \makeindex
 \makenomenclature %Necessário para gerar lista de siglas
 
+
 \begin{document}
+
 	\pdfbookmark[0]{Agradecimentos}{agradecimentos}
 	\include{agradecimentos}
 	\include{resumo}
