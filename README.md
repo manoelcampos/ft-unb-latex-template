@@ -24,7 +24,7 @@ Para apagar todo o lixo gerado pela compilação do documento, pode-se utilizar 
 Exemplo
 -------
 Um screenshot da capa de uma [dissertação de exemplo utilizando o template](principal.pdf) pode ser visto abaixo.
-![Capa de uma dissertação de exemplo utilizando o template](exemplo.png)
+![Capa de uma dissertação de exemplo utilizando o template](imagens/exemplo.png)
 
 Autor
 ----- 
