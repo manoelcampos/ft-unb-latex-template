@@ -3,7 +3,7 @@ Modelo em Latex para elaboração de dissertações e teses da Universidade de B
 
 Este é um modelo (template) Latex **NÃO OFICIAL** para elaboração de dissertações e teses da [Faculdade de Tecnologia (FT)](http://ftd.unb.br) da [UnB](http://unb.br). Esta é uma versão atualizada por [Manoel Campos](http://manoelcampos.com), adicionando recursos como "página de assinaturas" da dissertação/tese e organizando o código do template para que o mesmo não fique misturado com o conteúdo do documento sendo escrito pelo acadêmico. 
 
-Esta versão também removeu a necessidade de instalação do template em uma pasta específica do sistema, permitindo que ele fique dentro da pasta da dissertação/tese e tornando seu uso direto: basta baixar, fazer as alterações que desejar e compilar. Além disso, a removação da necessidade de instalação do template em uma pasta global específica para sistemas *\*nix*, permite o uso do mesmo em qualquer sistema operacional que tenha um compilador *PDFLatex*.
+Esta versão também removeu a necessidade de instalação do template em uma pasta específica do sistema, permitindo que ele fique dentro da pasta da dissertação/tese e tornando seu uso direto: basta baixar, fazer as alterações que desejar e compilar. Além disso, a removação da necessidade de instalação do template em uma pasta global específica para sistemas &#42;nix, permite o uso do mesmo em qualquer sistema operacional que tenha um compilador *PDFLatex*.
 
 Estrutura do projeto
 --------------------
@@ -20,6 +20,11 @@ Sua dissertação ou tese utilizando o template deve ser compilada com o compila
 Para quem é íntimo do terminal e de ferramentas de desenvolvimento, é disponibilizado um arquivo [Makefile](Makefile) que executa todos os comandos para compilar corretamente o documento. Em sistemas Linux, BSD e MacOS que possuam a ferramenta *make* instalada, basta entrar na pasta do projeto e digitar `make` para compilar. Se tudo correr bem, o documento [principal.pdf](principal.pdf) será gerado.
 
 Para apagar todo o lixo gerado pela compilação do documento, pode-se utilizar o [Makefile](Makefile), bastando executar o comando `make clean`.
+
+Exemplo
+-------
+Um screenshot da capa de uma [dissertação de exemplo utilizando o template](principal.pdf) pode ser vista abaixo.
+![Capa de uma dissertação de exemplo utilizando o template](exemplo.png)
 
 Autor
 ----- 
