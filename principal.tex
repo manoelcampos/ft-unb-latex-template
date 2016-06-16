@@ -5,8 +5,10 @@
 %e altera os títulos (como chapters, sections, references) para português
 \usepackage[brazil]{babel}
 
-% Definir que vai trabalhar com codificacão utf8 e inputenc -> entrada de acentos normal
-\usepackage[utf8]{inputenc} 
+% Define uso de caracteres acentuados no PDF gerado
+% e permite copiar corretamente o texto do PDF.
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
 
 % Adição do pacote do template da UnB
 \usepackage{template-FT-UnB/ft2unb}
@@ -48,8 +50,10 @@
 \titulolinhaii{DISSERTAÇÃO DE MESTRADO}
 \titulolinhaiii{OU TESE DE DOUTORADO}
 \titulolinhaiv{}
+
 \autori{SEU NOME COMPLETO AQUI}
-%\autorii{}
+%Caso seu nome não caiba em uma única linha, divida ele nos comandos abaixo
+%\autorii{} 
 %\autoriii{}
 
 \membrodabancai{Prof. Dr. NOME DO SEU ORIENTADOR, ENE/UnB}
