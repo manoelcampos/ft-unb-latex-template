@@ -61,13 +61,13 @@ de gerenciadores de pacotes, a serem executados a partir de um terminal, para di
 - Red Hat e derivados (como Fedora e CentOS): `sudo yum install texlive-full`
 - ArchLinux e derivados (como ArchBang): `sudo pacman install texlive-full`
 
-### Usuários de Mac OSX
+### Usuários de macOS
 
-Em sistemas Mac OSX deve ser instalada a distribuição LaTeX denominada [MacTeX](https://tug.org/mactex/).
+Em sistemas macOS deve ser instalada a distribuição LaTeX denominada [MacTeX](https://tug.org/mactex/).
 
 ## Como compilar o seu documento para PDF
 
-Para compilar sua monografia, dissertação ou tese para um arquivo PDF utilizando um editor latex como 
+Para compilar seu documento para um arquivo PDF utilizando um editor latex como 
 descrito nas seções acima, deve ser utilizado o compilador *PDFLaTeX* (normalmente definido como padrão nos editores). 
 
 O local onde define-se o compilador padrão ou onde pode-se
@@ -75,9 +75,9 @@ escolher o compilador varia de acordo com o editor em uso.
 Assim, verifique a documentação do seu editor para mais detalhes.
 
 Para os programadores que são familiarizados com o terminal,
-há um arquivo [Makefile](Makefile) que permite a compilação do documento
+há um arquivo [Makefile](Makefile) que permite compilar o documento
 por meio da linha de comando. Desta forma, tendo o programa *make* instalado
-(que já vem instalado por padrão em sistemas Linux e Mac OSX),
+(que é padrão em sistemas Linux e macOS),
 há os comandos abaixo disponíveis:
 
 - **make** compila o documento; 
