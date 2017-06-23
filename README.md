@@ -5,8 +5,7 @@
 Este é um modelo (template) Latex **NÃO OFICIAL** para elaboração de monografias, 
 dissertações e teses da [Faculdade de Tecnologia (FT)](http://ftd.unb.br) da [UnB](http://unb.br). 
 Esta é uma versão atualizada por [Manoel Campos](http://manoelcampos.com), adicionando recursos como "página de assinaturas" 
-e organizando o código do template para que o mesmo não fique misturado com o conteúdo do documento 
-sendo escrito pelo acadêmico. 
+e organizando o código do template para que o mesmo não fique misturado com o conteúdo do documento escrito pelo acadêmico. 
 
 Esta versão também removeu a necessidade de instalação do template em uma pasta específica do sistema, 
 permitindo que ele fique dentro da pasta da dissertação/tese e tornando seu uso direto: 
@@ -104,7 +103,7 @@ As referências a serem utilizadas devem estar no arquivo [referencias.bib](refe
 
 # Autor
 Não sou o autor original deste projeto :relaxed:, fiz apenas a reestruturação do mesmo para facilitar o uso e impedir 
-que comandos do template sejam misturados ao documento do acadêmico.
+que comandos do template sejam misturados ao texto do documento.
 
 Desta forma, os créditos pela autoria do projeto devem ser dados ao 
 [Prof. D.Sc. Geovany Araujo Borges (UnB)](https://lara.unb.br/~gaborges/).
