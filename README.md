@@ -17,14 +17,14 @@ permite o uso do mesmo em qualquer sistema operacional que tenha um compilador *
 # Como utilizar o modelo para escrever sua monografia, dissertação ou tese
 
 Para utilizar o modelo são necessários alguns softwares instalados em seu sistema operacional.
-O modelo pode ser utilizado em Windows, Linux e Mac OSX.
+O modelo pode ser utilizado em Windows, Linux e macOS.
 A seguir são apresentados mais detalhes.
 
 ## Editor de documentos LaTeX
 
 Para criar e editar arquivos tex, apesar de não ser um pré-requisito, o mais recomendável é utilizar um editor LaTeX específico.
-No entanto, pode-se editar os arquivos tex em qualquer editor de texto que suporte codificação de caracteres em UTF-8
-(como o Notepad do Windows ou qualquer editor de texto nativo de sistemas Linux e Mac OSX).
+No entanto, pode-se editar os arquivos em qualquer editor de texto que suporte codificação de caracteres em UTF-8
+(como o Notepad do Windows ou qualquer editor de texto nativo de sistemas Linux e macOS).
 
 Existem diversas alternativas de editores, tanto gratuitos como pagos.
 Um excelente editor que funciona em diversos sistemas operacionais
