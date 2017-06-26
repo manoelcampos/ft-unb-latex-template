@@ -34,7 +34,7 @@ do Texmaker e TexMakerX.
 ## Pré-requisitos para compilar seu documento
 
 Para compilar seu documento utilizando este modelo é preciso ter uma uma distribuição LaTeX instalada. 
-Existem distribuições disponíveis para os sistemas operacionais mais conhecidos como Windows, Linux e Mac OSX,
+Existem distribuições disponíveis para os sistemas operacionais mais conhecidos como Windows, Linux e macOS,
 como será visto a seguir.
 
 O compilador a ser utilizado, disponível após a instalação da distribuição LaTeX, é o *PDFLatex*, mas provavelmente pode
