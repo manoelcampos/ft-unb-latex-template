@@ -14,13 +14,13 @@ basta baixar, fazer as alterações que desejar e compilar, desde que tenha uma 
 Além disso, a remoção da necessidade de instalação do template em uma pasta global específica para sistemas &#42;nix, 
 permite o uso do mesmo em qualquer sistema operacional que tenha um compilador *PDFLatex*.
 
-# Como utilizar o modelo para escrever sua monografia, dissertação ou tese
+# 1. Como utilizar o modelo para escrever sua monografia, dissertação ou tese
 
 Para utilizar o modelo são necessários alguns softwares instalados em seu sistema operacional.
 O modelo pode ser utilizado em Windows, Linux e macOS.
 A seguir são apresentados mais detalhes.
 
-## Editor de documentos LaTeX
+## 1.1. Editor de documentos LaTeX
 
 Para criar e editar arquivos tex, apesar de não ser um pré-requisito, o mais recomendável é utilizar um editor LaTeX específico.
 No entanto, pode-se editar os arquivos em qualquer editor de texto que suporte codificação de caracteres em UTF-8
@@ -31,7 +31,7 @@ Um excelente editor que funciona em diversos sistemas operacionais
 é o [TeXstudio](http://www.texstudio.org), que foi baseado em versões atualmente descontinuadas
 do Texmaker e TexMakerX. 
 
-## Pré-requisitos para compilar seu documento
+## 1.2. Pré-requisitos para compilar seu documento
 
 Para compilar seu documento utilizando este modelo é preciso ter uma uma distribuição LaTeX instalada. 
 Existem distribuições disponíveis para os sistemas operacionais mais conhecidos como Windows, Linux e macOS,
@@ -42,11 +42,11 @@ utilizar outros compiladores.
 
 As sub-secções a seguir apresentam detalhes de instalação dos pré-requisitos para cada um dos sistemas operacionais em que o modelo foi testado.
 
-### Usuários de Windows
+### 1.2.1. Usuários de Windows
 
 Em sistemas Windows deve ser instalada a distribuição LaTeX denominada [MiKTeX](http://miktex.org).
 
-### Usuários de Linux
+### 1.2.2. Usuários de Linux
 
 Em sistemas Linux deve ser instalada a distribuição LaTeX denominada *texlive-full*.
 A instalação pode ser feita por meio de ferramentas gráficas como a "Central de Software" disponível em sistemas
@@ -60,11 +60,11 @@ de gerenciadores de pacotes, a serem executados a partir de um terminal, para di
 - Red Hat e derivados (como Fedora e CentOS): `sudo yum install texlive-full`
 - ArchLinux e derivados (como ArchBang): `sudo pacman install texlive-full`
 
-### Usuários de macOS
+### 1.2.3. Usuários de macOS
 
 Em sistemas macOS deve ser instalada a distribuição LaTeX denominada [MacTeX](https://tug.org/mactex/).
 
-## Como compilar o seu documento para PDF
+## 1.3. Como compilar o seu documento para PDF
 
 Para compilar seu documento para um arquivo PDF utilizando um editor latex como 
 descrito nas seções acima, deve ser utilizado o compilador *PDFLaTeX* (normalmente definido como padrão nos editores). 
@@ -86,10 +86,10 @@ Se o nome do arquivo principal do seu trabalho for diferente de *principal.tex*,
 para compilar utilizando o comando *make*, é preciso editar o arquivo [Makefile](Makefile) 
 e informar o nome do documento tex principal na primeira linha do *Makefile*.
 
-# Exemplo
+# 2. Exemplo
 Uma dissertação de exemplo utilizando o template [é disponibilizada juntamente com o projeto](principal.pdf).
 
-# Estrutura do projeto
+# 3. Estrutura do projeto
 Depois de baixados os arquivos do projeto você terá a seguinte estrutura de pastas:
 - **template-FT-UnB**: arquivos do template. A não ser que deseje fazer melhorias ou correções no template, 
   os arquivos desta pasta não devem ser modificados.
@@ -101,20 +101,19 @@ A partir dele é feita a compilação do documento.
 Cada arquivo .tex adicional é uma parte específica do documento de exemplo (como resumo, capítulos, conclusão, apêndices, etc). 
 As referências a serem utilizadas devem estar no arquivo [referencias.bib](referencias.bib).
 
-# Autor
+# 4. Autor
 Não sou o autor original deste projeto :relaxed:, fiz apenas a reestruturação do mesmo para facilitar o uso e impedir 
 que comandos do template sejam misturados ao texto do documento.
 
 Desta forma, os créditos pela autoria do projeto devem ser dados ao 
 [Prof. D.Sc. Geovany Araujo Borges (UnB)](https://lara.unb.br/~gaborges/).
 
-  
-# Colaboradores
+# 5. Colaboradores
 - Nathalie Pinheiro
 - André Calmon
 - Renan Utida
 - [Manoel Campos](http://twitter.com/manoelcampos) (eu :v: :smile:)
 
-# Licença:
+# 6. Licença
 - [Attribution-NonCommercial 4.0 (CC BY-NC 4.0)](http://creativecommons.org/licenses/by-nc/4.0/)
 
