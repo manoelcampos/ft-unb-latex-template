@@ -5,8 +5,7 @@
 Este é um modelo (template) Latex **NÃO OFICIAL** para elaboração de monografias, 
 dissertações e teses da [Faculdade de Tecnologia (FT)](http://ftd.unb.br) da [UnB](http://unb.br). 
 Esta é uma versão atualizada por [Manoel Campos](http://manoelcampos.com), adicionando recursos como "página de assinaturas" 
-e organizando o código do template para que o mesmo não fique misturado com o conteúdo do documento 
-sendo escrito pelo acadêmico. 
+e organizando o código do template para que o mesmo não fique misturado com o conteúdo do documento escrito pelo acadêmico. 
 
 Esta versão também removeu a necessidade de instalação do template em uma pasta específica do sistema, 
 permitindo que ele fique dentro da pasta da dissertação/tese e tornando seu uso direto: 
@@ -18,14 +17,14 @@ permite o uso do mesmo em qualquer sistema operacional que tenha um compilador *
 # Como utilizar o modelo para escrever sua monografia, dissertação ou tese
 
 Para utilizar o modelo são necessários alguns softwares instalados em seu sistema operacional.
-O modelo pode ser utilizado em Windows, Linux e Mac OSX.
+O modelo pode ser utilizado em Windows, Linux e macOS.
 A seguir são apresentados mais detalhes.
 
 ## Editor de documentos LaTeX
 
 Para criar e editar arquivos tex, apesar de não ser um pré-requisito, o mais recomendável é utilizar um editor LaTeX específico.
-No entanto, pode-se editar os arquivos tex em qualquer editor de texto que suporte codificação de caracteres em UTF-8
-(como o Notepad do Windows ou qualquer editor de texto nativo de sistemas Linux e Mac OSX).
+No entanto, pode-se editar os arquivos em qualquer editor de texto que suporte codificação de caracteres em UTF-8
+(como o Notepad do Windows ou qualquer editor de texto nativo de sistemas Linux e macOS).
 
 Existem diversas alternativas de editores, tanto gratuitos como pagos.
 Um excelente editor que funciona em diversos sistemas operacionais
@@ -35,7 +34,7 @@ do Texmaker e TexMakerX.
 ## Pré-requisitos para compilar seu documento
 
 Para compilar seu documento utilizando este modelo é preciso ter uma uma distribuição LaTeX instalada. 
-Existem distribuições disponíveis para os sistemas operacionais mais conhecidos como Windows, Linux e Mac OSX,
+Existem distribuições disponíveis para os sistemas operacionais mais conhecidos como Windows, Linux e macOS,
 como será visto a seguir.
 
 O compilador a ser utilizado, disponível após a instalação da distribuição LaTeX, é o *PDFLatex*, mas provavelmente pode
@@ -61,13 +60,13 @@ de gerenciadores de pacotes, a serem executados a partir de um terminal, para di
 - Red Hat e derivados (como Fedora e CentOS): `sudo yum install texlive-full`
 - ArchLinux e derivados (como ArchBang): `sudo pacman install texlive-full`
 
-### Usuários de Mac OSX
+### Usuários de macOS
 
-Em sistemas Mac OSX deve ser instalada a distribuição LaTeX denominada [MacTeX](https://tug.org/mactex/).
+Em sistemas macOS deve ser instalada a distribuição LaTeX denominada [MacTeX](https://tug.org/mactex/).
 
 ## Como compilar o seu documento para PDF
 
-Para compilar sua monografia, dissertação ou tese para um arquivo PDF utilizando um editor latex como 
+Para compilar seu documento para um arquivo PDF utilizando um editor latex como 
 descrito nas seções acima, deve ser utilizado o compilador *PDFLaTeX* (normalmente definido como padrão nos editores). 
 
 O local onde define-se o compilador padrão ou onde pode-se
@@ -75,9 +74,9 @@ escolher o compilador varia de acordo com o editor em uso.
 Assim, verifique a documentação do seu editor para mais detalhes.
 
 Para os programadores que são familiarizados com o terminal,
-há um arquivo [Makefile](Makefile) que permite a compilação do documento
+há um arquivo [Makefile](Makefile) que permite compilar o documento
 por meio da linha de comando. Desta forma, tendo o programa *make* instalado
-(que já vem instalado por padrão em sistemas Linux e Mac OSX),
+(que é padrão em sistemas Linux e macOS),
 há os comandos abaixo disponíveis:
 
 - **make** compila o documento; 
@@ -104,7 +103,7 @@ As referências a serem utilizadas devem estar no arquivo [referencias.bib](refe
 
 # Autor
 Não sou o autor original deste projeto :relaxed:, fiz apenas a reestruturação do mesmo para facilitar o uso e impedir 
-que comandos do template sejam misturados ao documento do acadêmico.
+que comandos do template sejam misturados ao texto do documento.
 
 Desta forma, os créditos pela autoria do projeto devem ser dados ao 
 [Prof. D.Sc. Geovany Araujo Borges (UnB)](https://lara.unb.br/~gaborges/).
