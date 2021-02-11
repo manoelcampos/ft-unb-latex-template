@@ -1,6 +1,9 @@
 # Modelo em Latex para elaboração de monografias, dissertações e teses da Universidade de Brasília (UnB)
 -------------------------------------------------------------------------------------------------------
-![Capa de uma dissertação de exemplo utilizando o template](imagens/exemplo.png)
+
+<p align="center">
+<img src="imagens/exemplo.png" alt="Capa de uma dissertação de exemplo utilizando o template">
+</p>
 
 Este é um modelo (template) Latex **NÃO OFICIAL** para elaboração de monografias, 
 dissertações e teses da [Faculdade de Tecnologia (FT)](http://ftd.unb.br) da [UnB](http://unb.br). 
