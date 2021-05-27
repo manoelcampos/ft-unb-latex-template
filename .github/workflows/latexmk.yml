@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: pdflatex
+name: latexmk
 
 # Controls when the action will run. 
 on:
@@ -31,12 +31,12 @@ jobs:
         with:
           # The root LaTeX file to be compiled
           root_file: principal.tex
-          # The LaTeX engine to be invoked. Optional, default is latexmk
-          compiler: pdflatex
           # Arbitrary bash codes to be executed before compiling LaTeX documents. Optional
-          pre_compile: pdflatex -file-line-error -interaction=nonstopmode "principal.tex"
+          #pre_compile: pdflatex -file-line-error -interaction=nonstopmode "principal.tex"; bibtex "principal.aux"; makeindex "principal" && makeindex "principal.nlo" -s nomencl.ist -o "principal.nls" 
           # Arbitrary bash codes to be executed after compiling LaTeX documents. Optional
-          post_compile: bibtex "principal.aux"; makeindex "principal" && makeindex "principal.nlo" -s nomencl.ist -o "principal.nls" 
+          #post_compile: 
+          # The LaTeX engine to be invoked. Optional, default is latexmk
+          #compiler:
           # The working directory for the LaTeX engine. Optional
           #working_directory:
           # Extra arguments to be passed to the LaTeX engine
