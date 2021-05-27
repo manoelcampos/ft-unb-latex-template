@@ -34,7 +34,7 @@ jobs:
           # Arbitrary bash codes to be executed before compiling LaTeX documents. Optional
           #pre_compile: pdflatex -file-line-error -interaction=nonstopmode "principal.tex"; bibtex "principal.aux"; makeindex "principal" && makeindex "principal.nlo" -s nomencl.ist -o "principal.nls" 
           # Arbitrary bash codes to be executed after compiling LaTeX documents. Optional
-          #post_compile: 
+          post_compile: ls -lh *.pdf
           # The LaTeX engine to be invoked. Optional, default is latexmk
           #compiler:
           # The working directory for the LaTeX engine. Optional
@@ -45,5 +45,6 @@ jobs:
           #extra_packages:
           # Optional. Install extra packages by apk
           #extra_system_packages:
+          
         
         
