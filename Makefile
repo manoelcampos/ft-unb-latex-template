@@ -1,5 +1,5 @@
 FILE=principal
-TEMP_FILE_EXTENSIONS=log aux lof loc lol lot bit idx glo bbl brf nlo nls ilg toc ind out blg synctex.gz snm nav soc thm
+TEMP_FILE_EXTENSIONS=log aux lof loc lol lot bit idx glo bbl brf nlo nls ilg toc ind out blg synctex.gz snm nav soc thm fdb_latexmk fls
 all:
 	rm -f "$(FILE).pdf"
 	latexmk -r .latexmkrc -pdf -file-line-error -halt-on-error -interaction=nonstopmode "$(FILE).tex" > /dev/null 2>&1
