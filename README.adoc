@@ -159,6 +159,6 @@ https://lara.unb.br/~gaborges/[Prof. D.Sc. Geovany Araujo Borges (UnB)].
 
 O template é disponibilizado sob a licença link:template-FT-UnB/LICENSE[Creative Commons Attribution-NonCommercial 4.0 (CC BY-NC 4.0)].
 O LICENSE na raiz é apenas um link pra tal arquivo. Se você for criar um documento a partir deste template,
-fique à vontade para excluir tal arquivo e definir uma licença específica para o seu documento.
-O arquivo de licença no diretório do link acima não deve ser excluída.
+fique à vontade para excluir tal link e incluir no lugar uma licença específica para o seu documento.
+O arquivo original da licença não deve ser excluído.
 
