@@ -1,8 +1,11 @@
 :numbered:
+:pdf_link: https://github.com/manoelcampos/ft-unb-latex-template/blob/gh-pages/principal.pdf
 
 = Modelo em Latex para elaboração de monografias, dissertações e teses da Universidade de Brasília (UnB)
 
-pass:[<p align="center"><a href="https://github.com/manoelcampos/ft-unb-latex-template/blob/gh-pages/principal.pdf"><img src="imagens/exemplo.png"></a></p>]
+pass:[<p align="center">]
+image:imagens/exemplo.png[link={pdf_link}]
+pass:[</p>]
 
 Este é um modelo (template) Latex **NÃO OFICIAL** para elaboração de monografias, 
 dissertações e teses da http://ftd.unb.br[Faculdade de Tecnologia (FT)] da http://unb.br[UnB]. 
@@ -15,6 +18,10 @@ basta baixar, fazer as alterações que desejar e compilar, desde que tenha uma 
 (veja detalhes na seção a seguir). 
 Além disso, a remoção da necessidade de instalação do template em uma pasta global específica para sistemas &#42;nix, 
 permite o uso do mesmo em qualquer sistema operacional que tenha um compilador *PDFLatex*.
+
+== Exemplo
+
+Clique na imagem no topo da página (ou link:{pdf_link}[aqui]) para acessar um PDF de uma dissertação de exemplo. E o mais legal é que ao fazer um push, seu documento é compilado e o PDF atualizado automaticamente. Ao usar o template, você precisa apenas alterar tal link para o seu repositório. 
 
 == Como utilizar o modelo para escrever sua monografia, dissertação ou tese
 
@@ -87,9 +94,6 @@ há os comandos abaixo disponíveis:
 Se o nome do arquivo principal do seu trabalho for diferente de *principal.tex*,
 para compilar utilizando o comando *make*, é preciso editar o arquivo link:Makefile[Makefile] 
 e informar o nome do documento tex principal na primeira linha do *Makefile*.
-
-== Exemplo
-Um PDF de uma dissertação de exemplo utilizando o template https://github.com/manoelcampos/ft-unb-latex-template/blob/gh-pages/principal.pdf[é disponibilizado aqui].
 
 == Estrutura do projeto
 Depois de baixados os arquivos do projeto você terá a seguinte estrutura de pastas:
