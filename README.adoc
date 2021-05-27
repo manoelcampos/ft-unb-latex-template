@@ -17,7 +17,9 @@ endif::[]
 
 :description: Modelo em Latex para elaboração de monografias, dissertações e teses da Universidade de Brasília (UnB)
 
-= Modelo em Latex para elaboração de monografias, dissertações e teses da Universidade de Brasília (UnB)
+= Modelo em Latex para elaboração de monografias, dissertações e teses da Universidade de Brasília (UnB) 
+
+image:https://github.com/manoelcampos/ft-unb-latex-template/actions/workflows/latexmk.yml/badge.svg[link=https://github.com/manoelcampos/ft-unb-latex-template/actions/workflows/latexmk.yml]
 
 pass:[<p align="center">]
 image:imagens/exemplo.png[link={pdf_link}]
