@@ -37,7 +37,7 @@ permite o uso do mesmo em qualquer sistema operacional que tenha um compilador *
 
 == Exemplo
 
-Clique na imagem no topo da página (ou link:{pdf_link}[aqui]) para acessar um PDF de uma dissertação de exemplo. E o mais legal é que ao fazer um push, seu documento é compilado e o PDF atualizado automaticamente. Desta forma, basta passar o link acima para seu orientador que ele sempre terá a versão mais atual do artigo. Se se você quiser saber de qual versão do documento foi gerado o PDF, basta olhar o último commit no branch `gh-pages`.
+Clique na imagem no topo da página (ou link:{pdf_link}[aqui]) para acessar um PDF de uma dissertação de exemplo. E o mais legal é que ao fazer um push, seu documento é compilado e o PDF atualizado automaticamente. Desta forma, basta passar o link acima para seu orientador que ele sempre terá a versão mais atual do artigo. E se você quiser saber de qual versão do documento foi gerado o PDF, basta olhar o último commit no branch `gh-pages`.
 
 IMPORTANT: Ao usar o template, você precisa apenas alterar o link do PDF para apontar pro seu repositório,
 editando este arquivo e alterando o atributo `:pdf_link` no topo dele.
