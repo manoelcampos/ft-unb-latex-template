@@ -34,7 +34,7 @@ jobs:
           # Extra arguments to be passed to the LaTeX engine. Optional.
           # Default is -pdf -file-line-error -halt-on-error -interaction=nonstopmode
           # Passa o nome do arquivo que contém a forma correta de chamar o comando makeindex pelo latexmk para o template
-          args: -r .latexmkrc
+          args: -r .latexmkrc -pdf -file-line-error -halt-on-error -interaction=nonstopmode
           # Arbitrary bash codes to be executed before compiling LaTeX documents. Optional
           #pre_compile: pdflatex -file-line-error -interaction=nonstopmode "principal.tex"; bibtex "principal.aux"; makeindex "principal" && makeindex "principal.nlo" -s nomencl.ist -o "principal.nls" 
           # Arbitrary bash codes to be executed after compiling LaTeX documents. Optional
