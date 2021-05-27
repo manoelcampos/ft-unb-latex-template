@@ -27,6 +27,8 @@ pass:[<p align="center">]
 image:imagens/exemplo.png[link={pdf_link}]
 pass:[</p>]
 
+== Introdução
+
 Este é um modelo (template) Latex **NÃO OFICIAL** para elaboração de monografias, 
 dissertações e teses da http://ftd.unb.br[Faculdade de Tecnologia (FT)] da http://unb.br[UnB]. 
 Esta é uma versão atualizada, adicionando recursos como "página de assinaturas" 
@@ -34,7 +36,7 @@ e organizando o código do template para que o mesmo não fique misturado com o 
 
 Esta versão também removeu a necessidade de instalação do template em uma pasta específica do sistema, 
 permitindo que ele fique dentro da pasta da dissertação/tese e tornando seu uso direto: 
-basta baixar, fazer as alterações que desejar e compilar, desde que tenha uma distribuição Latex instalada 
+usar o template, fazer as alterações que desejar e compilar, desde que tenha uma distribuição Latex instalada 
 (veja detalhes na seção a seguir). 
 Além disso, a remoção da necessidade de instalação do template em uma pasta global específica para sistemas &#42;nix, 
 permite o uso do mesmo em qualquer sistema operacional que tenha um compilador *PDFLatex*.
@@ -132,6 +134,7 @@ e informar o nome do documento tex principal na primeira linha do *Makefile*.
 
 == Estrutura do projeto
 Depois de baixados os arquivos do projeto você terá a seguinte estrutura de pastas:
+
 - **template-FT-UnB**: arquivos do template. A não ser que deseje fazer melhorias ou correções no template, 
   os arquivos desta pasta não devem ser modificados.
 - **imagens**: pasta onde as imagens da sua monografia/dissertação/tese devem ser salvas para facilitar a organização
