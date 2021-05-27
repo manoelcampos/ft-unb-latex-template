@@ -17,9 +17,11 @@ endif::[]
 
 :description: Modelo em Latex para elaboração de monografias, dissertações e teses da Universidade de Brasília (UnB)
 
-= Modelo em Latex para elaboração de monografias, dissertações e teses da Universidade de Brasília (UnB) 
+= Modelo em Latex para elaboração de monografias, dissertações e teses da Universidade de Brasília (UnB) image:https://github.com/manoelcampos/ft-unb-latex-template/actions/workflows/latexmk.yml/badge.svg[link=https://github.com/manoelcampos/ft-unb-latex-template/actions/workflows/latexmk.yml]
 
-image:https://github.com/manoelcampos/ft-unb-latex-template/actions/workflows/latexmk.yml/badge.svg[link=https://github.com/manoelcampos/ft-unb-latex-template/actions/workflows/latexmk.yml]
+ifndef::env-github[]
+link:https://github.com/manoelcampos/ft-unb-latex-template/[Acesse no GitHub image:https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png[width=10%]]
+endif::[]
 
 pass:[<p align="center">]
 image:imagens/exemplo.png[link={pdf_link}]
@@ -39,7 +41,7 @@ permite o uso do mesmo em qualquer sistema operacional que tenha um compilador *
 
 == Exemplo
 
-Clique na imagem no topo da página (ou link:{pdf_link}[aqui]) para acessar um PDF de uma dissertação de exemplo. E o mais legal é que ao fazer um push, seu documento é compilado e o PDF atualizado automaticamente. Desta forma, basta passar o link acima para o(a) orientador(a) que ele(a) sempre terá a versão mais atual do artigo. E se você quiser saber de qual versão do documento foi gerado o PDF, basta olhar o último commit no branch `gh-pages`.
+Clique link:{pdf_link}[aqui para acessar um PDF] de uma dissertação de exemplo. E o mais legal é que ao fazer um push, seu documento é compilado e o PDF atualizado automaticamente. Desta forma, basta passar o link acima para o(a) orientador(a) que ele(a) sempre terá a versão mais atual do artigo. E se você quiser saber de qual versão do documento foi gerado o PDF, basta olhar o último commit no branch `gh-pages`.
 
 IMPORTANT: Ao usar o template, você precisa apenas alterar o link do PDF para apontar pro seu repositório,
 editando este arquivo e alterando o atributo `:pdf_link` no topo dele.
