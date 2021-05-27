@@ -31,16 +31,17 @@ jobs:
         with:
           # The root LaTeX file to be compiled
           root_file: principal.tex
+          # Extra arguments to be passed to the LaTeX engine. Optional, default is -pdf -file-line-error -halt-on-error -interaction=nonstopmode
+          # Passa o nome do arquivo que contém a forma correta de chamar o comando makeindex pelo latexmk para o template
+          args: -r .latexmkrc
           # Arbitrary bash codes to be executed before compiling LaTeX documents. Optional
           #pre_compile: pdflatex -file-line-error -interaction=nonstopmode "principal.tex"; bibtex "principal.aux"; makeindex "principal" && makeindex "principal.nlo" -s nomencl.ist -o "principal.nls" 
           # Arbitrary bash codes to be executed after compiling LaTeX documents. Optional
-          post_compile: ls -lh *.pdf; makeindex "principal"; makeindex "principal.nlo" -s nomencl.ist -o "principal.nls"; pdflatex -file-line-error -interaction=nonstopmode "principal.tex"
+          post_compile: ls -lh *.pdf
           # The LaTeX engine to be invoked. Optional, default is latexmk
           #compiler:
           # The working directory for the LaTeX engine. Optional
           #working_directory:
-          # Extra arguments to be passed to the LaTeX engine
-          #args: # optional, default is -pdf -file-line-error -halt-on-error -interaction=nonstopmode
           # [Deprecated] Optional. Install extra packages by sudo tlmgr install
           #extra_packages:
           # Optional. Install extra packages by apk
