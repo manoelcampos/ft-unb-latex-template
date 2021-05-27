@@ -1,6 +1,6 @@
 = Modelo em Latex para elaboração de monografias, dissertações e teses da Universidade de Brasília (UnB)
 
-image:imagens/exemplo.png[link=https://github.com/manoelcampos/ft-unb-latex-template/blob/gh-pages/principal.pdf]
+pass:[<p align="center"><a href="https://github.com/manoelcampos/ft-unb-latex-template/blob/gh-pages/principal.pdf"><img src="imagens/exemplo.png"></a></p>]
 
 Este é um modelo (template) Latex **NÃO OFICIAL** para elaboração de monografias, 
 dissertações e teses da http://ftd.unb.br[Faculdade de Tecnologia (FT)] da http://unb.br[UnB]. 
