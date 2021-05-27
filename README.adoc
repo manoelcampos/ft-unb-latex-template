@@ -1,5 +1,21 @@
-:numbered:
 :pdf_link: https://github.com/manoelcampos/ft-unb-latex-template/blob/gh-pages/principal.pdf
+
+:numbered:
+:icons: font
+:toc-title: Sumário
+ifndef::env-github[:toc: left]
+ifdef::env-github[:outfilesuffix: .adoc]
+
+ifdef::env-github,env-browser[]
+// Exibe ícones para os blocos como NOTE e IMPORTANT no GitHub
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+
+:description: Modelo em Latex para elaboração de monografias, dissertações e teses da Universidade de Brasília (UnB)
 
 = Modelo em Latex para elaboração de monografias, dissertações e teses da Universidade de Brasília (UnB)
 
