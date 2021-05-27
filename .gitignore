@@ -27,3 +27,7 @@ principal.pdf
 *.lot
 *.nls
 *.thm
+
+# Arquivos gerados pelo latexmk
+*.fdb_latexmk
+*.fls
