@@ -96,14 +96,26 @@ de gerenciadores de pacotes, a serem executados a partir de um terminal, para di
 
 Em sistemas macOS deve ser instalada a distribuição LaTeX denominada https://tug.org/mactex/[MacTeX].
 
-=== Como compilar o seu documento para PDF
+=== Como compilar o seu documento para PDF a partir do seu computador
 
-Para compilar seu documento para um arquivo PDF utilizando um editor latex como 
-descrito nas seções acima, deve ser utilizado o compilador *PDFLaTeX* (normalmente definido como padrão nos editores). 
+Para compilar seu documento para um arquivo PDF utilizando um editor LaTeX como 
+descrito nas seções acima, pode ser utilizado o compilador *PDFLaTeX* (normalmente definido como padrão nos editores),
+mas com o *latexmk* o processo é bem mais fácil e sem transtornos. 
+O template é um documento complexo que inclui índices adicionais (como índice de siglas),
+o que exige algumas configurações a mais para que o documento seja compilado com todos os índices
+esperados. Para isto, há duas formas de compilar, como mostrado a seguir.
+Mas lembre que ao fazer push para o GitHub, o documento é compilado e o PDF gerado automaticamente.
 
-O local onde define-se o compilador padrão ou onde pode-se
-escolher o compilador varia de acordo com o editor em uso.
+==== Compilando pelo seu editor LaTeX
+
+Se você usar o botão de compilação do seu editor, o documento deve ser gerado normalmente,
+mas sem todos os índices mencionados acima. Por isso, você precisa configurar seu editor.
+O local onde define-se o comando de compilação varia de acordo com o editor em uso.
 Assim, verifique a documentação do seu editor para mais detalhes.
+Quando encontrar o local onde o compilador pode ser configurado,
+abra o arquivo link:Makefile[Makefile] e copie o comando `latexmk` como mostrado lá.
+
+==== Compilando pelo terminal no Linux/macOS
 
 Para os programadores que são familiarizados com o terminal,
 há um arquivo link:Makefile[Makefile] que permite compilar o documento
