@@ -46,11 +46,9 @@ jobs:
           # Optional. Install extra packages by apk
           #extra_system_packages:
 
-    # Includes the AsciiDoctor GitHub Pages Action to convert adoc files to html and publish to gh-pages branch
-    - name: asciidoctor-ghpages
-      uses: manoelcampos/asciidoctor-ghpages-action@v2
-      with:
-        asciidoctor_params: --attribute=nofooter
-        pdf_build: false          
-        
-        
+      # Includes the AsciiDoctor GitHub Pages Action to convert adoc files to html and publish to gh-pages branch
+      - name: asciidoctor-ghpages
+        uses: manoelcampos/asciidoctor-ghpages-action@v2
+        with:
+          asciidoctor_params: --attribute=nofooter
+          pdf_build: false          
