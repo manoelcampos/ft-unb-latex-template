@@ -87,7 +87,7 @@ para compilar utilizando o comando *make*, é preciso editar o arquivo link:Make
 e informar o nome do documento tex principal na primeira linha do *Makefile*.
 
 == 2. Exemplo
-Uma dissertação de exemplo utilizando o template link:principal.pdf[é disponibilizada juntamente com o projeto].
+Uma dissertação de exemplo utilizando o template https://github.com/manoelcampos/ft-unb-latex-template/blob/gh-pages/principal.pdf[é disponibilizada juntamente com o projeto].
 
 == 3. Estrutura do projeto
 Depois de baixados os arquivos do projeto você terá a seguinte estrutura de pastas:
