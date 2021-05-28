@@ -39,7 +39,7 @@ permitindo que ele fique dentro da pasta da dissertação/tese e tornando seu us
 usar o template, fazer as alterações que desejar e compilar, desde que tenha uma distribuição Latex instalada 
 (veja detalhes na seção a seguir). 
 Além disso, a remoção da necessidade de instalação do template em uma pasta global específica para sistemas &#42;nix, 
-permite o uso do mesmo em qualquer sistema operacional que tenha um compilador *PDFLatex*.
+permite o uso do mesmo em qualquer sistema operacional que tenha um compilador *latexmk* (ou até o *PDFLaTeX*).
 
 == Exemplo
 
@@ -71,8 +71,7 @@ Para compilar seu documento utilizando este modelo é preciso ter uma uma distri
 Existem distribuições disponíveis para os sistemas operacionais mais conhecidos como Windows, Linux e macOS,
 como será visto a seguir.
 
-O compilador a ser utilizado, disponível após a instalação da distribuição LaTeX, é o *PDFLatex*, mas provavelmente pode
-utilizar outros compiladores.
+O compilador a ser utilizado, disponível após a instalação da distribuição LaTeX, é o *latexmk*.
 
 As sub-secções a seguir apresentam detalhes de instalação dos pré-requisitos para cada um dos sistemas operacionais em que o modelo foi testado.
 
@@ -101,8 +100,8 @@ Em sistemas macOS deve ser instalada a distribuição LaTeX denominada https://t
 === Como compilar o seu documento para PDF a partir do seu computador
 
 Para compilar seu documento para um arquivo PDF utilizando um editor LaTeX como 
-descrito nas seções acima, pode ser utilizado o compilador *PDFLaTeX* (normalmente definido como padrão nos editores),
-mas com o *latexmk* o processo é bem mais fácil e sem transtornos. 
+descrito nas seções acima, pode ser utilizado o compilador *latexmk*,
+onde o processo é bem mais fácil e sem transtornos do que usar diretamente o *PDFLaTeX* (normalmente definido como padrão nos editores). 
 O template é um documento complexo que inclui índices adicionais (como índice de siglas),
 o que exige algumas configurações a mais para que o documento seja compilado com todos os índices
 esperados. Para isto, há duas formas de compilar, como mostrado a seguir.
