@@ -41,6 +41,9 @@ usar o template, fazer as alterações que desejar e compilar, desde que tenha u
 Além disso, a remoção da necessidade de instalação do template em uma pasta global específica para sistemas &#42;nix, 
 permite o uso do mesmo em qualquer sistema operacional que tenha um compilador *latexmk* (ou até o *PDFLaTeX*).
 
+IMPORTANT: Este projeto visa colaborar com outros estudantes da UnB, facilitando a tarefa de escrever um trabalho acadêmico.
+Muita dedicação foi empenhada aqui. Desta forma, contribuições de todos os tipos são bem vindas. Você pode começar dando uma estrela ⭐️ ao projeto e divulgando entre seus colegas de universidade e grupos de pesquisa.
+
 == Exemplo
 
 Clique link:{pdf_link}[aqui para acessar um PDF] de uma dissertação de exemplo. E o mais legal é que ao fazer um push, seu documento é compilado e o PDF atualizado automaticamente. Desta forma, basta passar o link acima para o(a) orientador(a) que ele(a) sempre terá a versão mais atual do artigo. E se você quiser saber de qual versão do documento foi gerado o PDF, basta olhar o último commit no branch `gh-pages`.
