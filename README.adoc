@@ -146,7 +146,7 @@ Cada arquivo .tex adicional é uma parte específica do documento de exemplo (co
 As referências a serem utilizadas devem estar no arquivo link:referencias.bib[referencias.bib].
 
 == Autor
-Não sou o autor original deste projeto :relaxed:, fiz apenas a reestruturação do mesmo para facilitar o uso e impedir 
+Não sou o autor original deste projeto 😊, fiz apenas a reestruturação do mesmo para facilitar o uso e impedir 
 que comandos do template sejam misturados ao texto do documento.
 
 Desta forma, os créditos pela autoria do projeto devem ser dados ao 
@@ -156,7 +156,7 @@ https://lara.unb.br/~gaborges/[Prof. D.Sc. Geovany Araujo Borges (UnB)].
 - Nathalie Pinheiro
 - André Calmon
 - Renan Utida
-- http://twitter.com/manoelcampos[Manoel Campos] (eu :v: :smile:)
+- http://twitter.com/manoelcampos[Manoel Campos] (eu 😀)
 
 == Licença
 
