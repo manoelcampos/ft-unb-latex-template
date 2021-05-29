@@ -37,7 +37,7 @@ jobs:
           # Ao passar um parâmetro adicional, os default deixam de ser passados e precisam ser explicitamente incluídos.
           args: -r .latexmkrc -pdf -file-line-error -halt-on-error -interaction=nonstopmode
           # Arbitrary bash codes to be executed before compiling LaTeX documents. Optional
-          #pre_compile: pdflatex -file-line-error -interaction=nonstopmode "principal.tex"; bibtex "principal.aux"; makeindex "principal" && makeindex "principal.nlo" -s nomencl.ist -o "principal.nls" 
+          #pre_compile: 
           # Arbitrary bash codes to be executed after compiling LaTeX documents. Optional
           post_compile: ls -lh *.pdf
           # The LaTeX engine to be invoked. Optional, default is latexmk
