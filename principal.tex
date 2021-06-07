@@ -19,7 +19,7 @@
 %Arquivo com lista com hifenização correta de algumas palavras.
 %Defina novas palavras no arquivo a medida que verificar que a hifenização automática
 %etá errada para tais palavras.
-\input{hifenizacao} 
+\input{hifenizacao}
 
 % ALTERE OS VALORES DENTRO DAS CHAVES DOS COMANDOS NESTA SEÇÃO PARA INCLUIR OS SEUS DADOS E DADOS DA SUA
 % DISSERTAÇÃO DE MESTRADO OU TESE DE DOUTORADO
@@ -107,9 +107,10 @@
 
 
 \begin{document}
-	\include{agradecimentos}
-	\include{resumo}
 	
+	\include{capitulos/agradecimentos}
+	\include{capitulos/resumo}
+  	\include{capitulos/abstract}
 	\pdfbookmark[0]{Sumário}{sumario}
 	\sumario
 	
@@ -129,22 +130,22 @@
 	
 	\mainmatter %Inicia a numeracao normal cardinal
 	\setcounter{page}{1} \pagenumbering{arabic} \pagestyle{plain}
-	
-	\include{introducao}
-	\include{capitulo1}
-	\include{capitulo2} 
-	\include{conclusao} 
-		
-	%\bibliographystyle{abnt-num} % estilo bibliográfico ABNT numérico
-	%\bibliographystyle{abnt-alf} % estilo bibliográfico ABNT alfabético
-	\bibliographystyle{sbc}  % estilo bibliográfico da Sociedade Brasileira de Computação (SBC)
-	
+
+	\include{capitulos/introducao}
+	\include{capitulos/capitulo1}
+	\include{capitulos/capitulo2}
+	\include{capitulos/capitulo3}
+	\include{capitulos/conclusao}
+
+	%\bibliographystyle{bibliografia/abnt-num} % estilo bibliográfico ABNT numérico
+	%\bibliographystyle{bibliografia/abnt-alf} % estilo bibliográfico ABNT alfabético
+	\bibliographystyle{bibliografia/sbc}  % estilo bibliográfico da Sociedade Brasileira de Computação (SBC)
+
 	%\renewcommand{\bibname}{REFERÊNCIAS BIBLIOGRÁFICAS} %Define o Caption da seção de bibliografia
 	%\addcontentsline{toc}{chapter}{REFERÊNCIAS BIBLIOGRÁFICAS}
 	
 	%não pode ter espaço entre os nomes dos arquivos bib
-	\bibliography{referencias}
-	
-	\include{apendice}
-\end{document}
+	\bibliography{bibliografia/referencias}
 
+	\include{capitulos/apendice}
+\end{document}

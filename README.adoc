@@ -167,3 +167,21 @@ O LICENSE na raiz é apenas um link pra tal arquivo. Se você for criar um docum
 fique à vontade para excluir tal link e incluir no lugar uma licença específica para o seu documento.
 O arquivo original da licença não deve ser excluído.
 
+=== Exemplo de atribuição conforme os termos da licença
+
+Segue um exemplo de como realizar a atribuição a esse projeto conforme os tempos da licença no formato markdown:
+
+```
+O _modelo não oficial de Latex da Faculdade de tecnologia da Universidade de Brasília para monografias, teses e dissertações_ não é de minha autoria. Seguem, abaixo, os créditos e atribuições referentes ao **material licenciado**.
+
+- Autor original do material licenciado: [Professor D.Sc. Geovany Araújo Borges](http://www2.ene.unb.br/gaborges/) da Universidade de Brasília.
+- Licenciante do material licenciado: [Manoel Campos da Silva Filho](https://github.com/manoelcampos).
+- Demais colaboradores mencionados pelo material licenciado:
+  - Nathalie Pinheiro;
+  - André Calmon;
+  - Renan Utida.
+- Link para o material licenciado: https://github.com/manoelcampos/ft-unb-latex-template
+- Licença utilizada pelo material licenciado: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)
+- Mudanças realizadas sobre o material licenciado:
+  - Colocar aqui as mudanças feitas sobre o material licenciado;
+```
