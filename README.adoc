@@ -53,9 +53,9 @@ editando este arquivo e alterando o atributo `:pdf_link` no topo dele.
 
 == Como utilizar o modelo para escrever sua monografia, dissertação ou tese
 
-Existem diferentes maneiras de usar este template, pelo [Overleaf neste link aqui](https://www.overleaf.com/latex/templates/ft-unb-latex-template/rchggqhsxgjy), ou diretamente no seu computador.
+Existem diferentes maneiras de usar este template, pelo https://www.overleaf.com/latex/templates/ft-unb-latex-template/rchggqhsxgjy:[Overleaf neste link aqui], ou diretamente no seu computador. No caso do Overleaf, o template não é atualizado automaticamente.
 
-Neste último caso, são necessários alguns softwares instalados em seu sistema operacional.
+No seu computador, são necessários alguns softwares instalados em seu sistema operacional.
 O modelo pode ser utilizado em Windows, Linux e macOS.
 A seguir são apresentados mais detalhes.
 
